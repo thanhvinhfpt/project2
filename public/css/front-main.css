@@ -1,0 +1,192 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+*,
+:before,
+:after {
+    box-sizing: inherit
+}
+
+strong,
+b {
+    font-weight: 700
+}
+
+em {
+    font-style: italic
+}
+
+h1 {
+    font-size: 2rem
+}
+
+h2 {
+    font-size: 1.5rem
+}
+
+h3 {
+    font-size: 1.325rem
+}
+
+h4 {
+    font-size: 1.125rem
+}
+
+h5 {
+    font-size: 1rem
+}
+
+h6 {
+    font-size: .875rem
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.5;
+    padding: .5rem 0
+}
+
+html {
+    font-family: Roboto, Arial, sans-serif;
+    font-display: fallback;
+    font-size: 16px
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify
+}
+
+a {
+    text-decoration: none
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    vertical-align: middle;
+    aspect-ratio: attr(width) / attr(height)
+}
+
+.container12 {
+    width: 100%;
+    margin: auto
+}
+
+.container1903::after,
+.container12::after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+.container12 .wrap {
+    width: 1170px;
+    margin: auto
+}
+
+.container12 .wrap > div {
+    width: 1170px
+}
+
+.clearfix {
+    clear: both
+}
+
+.d_none {
+    height: 1px;
+    display: inline-block;
+    overflow: hidden
+}
+
+.d_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+
+/**================================================*/
+
+#wrapper {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    margin: 5px auto 20px;
+    width: 1170px;
+    background-color: #fff
+}
+
+@media screen and (max-width: 1169px) and (min-width: 320px) {
+    #wrapper {
+        box-shadow: initial;
+        margin: initial;
+        width: 100%
+    }
+}

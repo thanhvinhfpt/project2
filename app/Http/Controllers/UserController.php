@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Doctor;
+class UserController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $lsUser = User::all();
+        return view('users.user')->with(['lsUser'=> $lsUser]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $user = new User();
+        $user->name = $request->usernameInsert;
+        $user->password = $request->passwordInsert;
+        $user->email = $request->emailInsert;
+        $user->doctor_code = $request->doctorCode;
+        $user->save();
+        return redirect("users");
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        $user_id = $request->user_id;
+        $user = User::find($user_id);
+        $user->delete();
+        return redirect("users");
+    }
+
+
+    public function checkDoctorExisit(Request $request){
+        $doctor_code = $request->doctor_code;
+        $doctor = Doctor::where('code','=', $doctor_code)->first();
+        $user = User::where('doctor_code', '=', $doctor_code)->first();
+        if($doctor != null && $user != null){
+            return response()->json(['data'=> "Bác sĩ đã có tài khoản"]);
+        }else if($doctor != null && $user == null){
+            return response()->json(['data'=>' ']);
+        }else if($doctor == null ){
+            return response()->json(['data'=>'Bác sĩ không tồn tại']);
+        }
+    }
+
+    public function checkEmailExisit(Request $request){
+        $email = $request->email;
+        $user = User::where('email','=',$email)->first();
+        if($user != null){
+            return response()->json(['data'=>'Email đã tồn tại, chọn lại']);
+        }else{
+            return response()->json(['data'=>' ']);
+        }
+    }
+}
