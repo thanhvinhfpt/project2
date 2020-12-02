@@ -13,8 +13,8 @@
                     </span>
                     <span class="sp1">
                          <strong>Ngôn ngữ :</strong>
-                        <a href="{{route('FrontEnd',$locale='vi')}}"><img src="{{asset('upload/vi.jpg')}}"></a>
-                        <a href="{{route('FrontEnd',$locale='en')}}"><img src="{{asset('upload/en.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('upload/vi.jpg')}}"></a>
+                        <a href="#"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
 
                 </div>

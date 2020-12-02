@@ -68,12 +68,8 @@ class FrontEndController extends Controller
             'articles' => $articles,
             'articlesWithImages' => $articlesWithImages]);
     }
-    public function index($locale){
-        if($locale != null){
+    public function index(){
 
-              App::setLocale($locale);
-
-        }
         $articles = [
             (object) [
                 'title' => 'WHO chỉ trích y tế một số nước như hàng không giá rẻ 1',

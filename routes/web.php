@@ -27,12 +27,11 @@ use App\Http\Controllers\FrontEndController;
 //});
 // frontend
 Route::get('/',[FrontEndController::class,'home'] );
-Route::get('/{locale}',[FrontEndController::class,'index'] )->name('FrontEnd');
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
 Route::get('/front/frontEndSchedule', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
 Route::post('/front/frontEndScheduleStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
-Route::get('/front/frontEndSchedule/{locale}', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
+
 
 //Auth::routes();
 //Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

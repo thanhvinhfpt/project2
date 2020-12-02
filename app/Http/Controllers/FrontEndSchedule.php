@@ -28,14 +28,8 @@ class FrontEndSchedule extends Controller
         $Hotrokhachhang = Post::all()->where('tagId','=','16');
         return view('pages.schedule')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
     }
-    public function index($locale)
+    public function index()
     {
-        if($locale != null){
-
-           App::setLocale($locale);
-
-        }
-
         $lsClinic = Clinic::all();
         $lsDoctor = Doctor::all();
         $gioithieukhoa = Post::all()->where('tagId','=','4');
