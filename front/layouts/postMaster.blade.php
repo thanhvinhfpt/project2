@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{URL::asset('img/favicon.png')}}" type="image/x-icon">
 
     <!-- CSRF Token -->
-{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
+    {{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -43,21 +43,14 @@
 
 </head>
 <body>
-    @include('partial.Header')
-    <section class="container12 sec17">
-        <div class="wrap">
-            <div class="d-flex">
-                @yield('content')
+@include('partial.postHeader')
 
-                @include('partial.SideBar')
-            </div>
-        </div>
-    </section>
+@yield('content')
 
-    @include('partial.Footer')
-    <script src="{!! asset('js/owl.carousel.min.js') !!}"></script>
-    <script src="{{URL::asset('js/main-home.js')}}"></script>
-    <script src="{{URL::asset('js/main.js')}}"></script>
+@include('partial.Footer')
+<script src="{!! asset('js/owl.carousel.min.js') !!}"></script>
+<script src="{{URL::asset('js/main-home.js')}}"></script>
+<script src="{{URL::asset('js/main.js')}}"></script>
 </body>
 </html>
 
