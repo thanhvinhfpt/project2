@@ -55,9 +55,10 @@ class FrontEndController extends Controller
                 'img' => 'https://i1-suckhoe.vnecdn.net/2020/11/30/35943712-8972973-image-m-116-1-8886-1169-1606712269.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=LKoQVyH3F21yVsjqdqQkqQ'
             ],
         ];
-        $lsClinic = Post::all()->where('tagId','=','4');
+        $gioithieukhoa = Post::all()->where('tagId','=','4');
+
         $gioithieuchung = Post::all()->where('tagId','=','10');
-        return view('pages.home')->with(['lsClinic'=>$lsClinic,'gioithieuchung'=>$gioithieuchung,'specialties' => Specialties::all(),
+        return view('pages.home')->with(['gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,
             'articles' => $articles,
             'articlesWithImages' => $articlesWithImages]);
     }

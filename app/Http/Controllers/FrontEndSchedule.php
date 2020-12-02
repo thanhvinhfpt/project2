@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Clinic;
+
+use App\Models\Post;
 use App\Models\Doctor;
 use App\Models\ExaminationSchedule;
 class FrontEndSchedule extends Controller
@@ -15,10 +17,13 @@ class FrontEndSchedule extends Controller
      */
     public function index()
     {
-        
+
         $lsClinic = Clinic::all();
         $lsDoctor = Doctor::all();
-        return view('pages.schedule')->with(['lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
+        $gioithieukhoa = Post::all()->where('tagId','=','4');
+
+        $gioithieuchung = Post::all()->where('tagId','=','10');
+        return view('pages.schedule')->with(['gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
     }
 
     /**
@@ -28,7 +33,7 @@ class FrontEndSchedule extends Controller
      */
     public function create()
     {
-        
+
 
     }
 
@@ -115,7 +120,7 @@ class FrontEndSchedule extends Controller
             return response()->json(['data'=> "Lịch bận, vui lòng chọn lịch khác"]);
         }else{
             return response()->json(['data'=>""]);
-           
-        } 
+
+        }
     }
 }

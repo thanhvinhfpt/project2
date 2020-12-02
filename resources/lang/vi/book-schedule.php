@@ -9,7 +9,7 @@ return [
     'TOOL_TIP_IMAGE_01' => 'Bệnh viện sang xịn mịn',
     'TOOL_TIP_IMAGE_02' => 'Bệnh viện sang xịn mịn',
     'MENU' => [
-        'INTRODUCTION' => 'Giới thiệu',
+        'INTRODUCTION' => 'Lời giới thiệu',
         'MISSION_VISION' => 'Sứ mệnh và tầm nhìn',
         'INFRASTRUCTURE' => 'cơ sở vật chất',
         'DOCTORS_TEAM' => 'Đội ngũ bác sĩ',
@@ -32,5 +32,16 @@ return [
         'MOCK_URL' => 'https://ncov.moh.gov.vn',
         'NEWS_COVID' => 'Tin tức covid',
         'CONTACT' => 'Liên hệ',
+        'Obstetric Departement'=>'Khoa phụ sản',
+        'Department of Hepatology'=>'Chuyên khoa Gan mật',
+        'Gastrointestinal specialist'=>'Chuyên khoa Tiêu hóa',
+        'Specialist in musculoskeletal system'=>'Chuyên khoa cơ xương khớp',
+        'ENT specialist'=>'Chuyên khoa tai mũi họng',
+        'Chuyên khoa Da liễu'=>'Dermatology Specialist',
+        'Chuyên khoa Mắt'=>'Eye Specialist',
+        'Khoa Dược'=>'Faculty of Pharmacy',
+        'Đơn vị Chẩn đoán hình ảnh'=>'Diagnostic Imaging Unit',
+        'Phòng cấp cứu'=>'Emergency room',
+
     ]
 ];
