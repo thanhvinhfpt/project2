@@ -26,7 +26,8 @@ use App\Http\Controllers\FrontEndController;
 //    return view('pages.home');
 //});
 // frontend
-Route::get('/',[FrontEndController::class,'index'] )->name('FrontEnd');
+Route::get('/',[FrontEndController::class,'home'] );
+Route::get('/{locale}',[FrontEndController::class,'index'] )->name('FrontEnd');
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
 Route::get('/front/frontEndSchedule', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');

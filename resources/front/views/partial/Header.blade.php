@@ -8,8 +8,15 @@
                         <a href="mailto:{{SiteHelper::$email_contact}}">{{SiteHelper::$email_contact}}</a>
                     </span>
                     <span class="sp2">
+
                         <a href="tel:{{SiteHelper::$phone_contact}}">{{SiteHelper::$phone_contact}} </a>
                     </span>
+                    <span class="sp1">
+                         <strong>Ngôn ngữ :</strong>
+                        <a href="{{route('FrontEnd',$locale='vi')}}"><img src="{{asset('upload/vi.jpg')}}"></a>
+                        <a href="{{route('FrontEnd',$locale='en')}}"><img src="{{asset('upload/en.jpg')}}"></a>
+                    </span>
+
                 </div>
                 <!-- End Contact -->
 
@@ -82,13 +89,7 @@
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
-{{--                                <li class="menu-item"><a href="{{route('FrontendPost',6)}}">Lời giới thiệu</a></li>--}}
-{{--                                <li class="menu-item"><a href="{{route('FrontendPost',7)}}">Sứ mệnh và tầm nhìn</a></li>--}}
-{{--                                <li class="menu-item"><a href="{{route('FrontendPost',8)}}">Cơ sở vật chất</a></li>--}}
-{{--                                <li class="menu-item"><a href="#">Đội ngũ Bác sĩ</a></li>--}}
-{{--                                <li class="menu-item"><a href="#">Hoạt động bệnh viện</a></li>--}}
-{{--                                <li class="menu-item"><a href="{{route('FrontendPost',9)}}">Văn hóa Thu cúc</a></li>--}}
-{{--                                <li class="menu-item"><a href="#">Thư viện hình ảnh</a></li>--}}
+                                
 
                             </ul>
                         </li>
@@ -101,47 +102,54 @@
                             </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                            <a href="https://benhvienthucuc.vn/dich-vu-y-te/">Dịch vụ y tế</a>
+                            <a href="#">{{ trans('book-schedule.MENU.'.'Dịch vụ y tế') }}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="https://benhvienthucuc.vn/dich-vu-y-te/goi-kham-suc-khoe/">Gói khám sức khỏe</a></li>
-                                <li class="menu-item"><a href="https://benhvienthucuc.vn/dich-vu-y-te/cac-goi-kham-tam-soat-ung-thu/">Gói khám tầm soát ung thư</a></li>
-                                <li class="menu-item"><a href="https://benhvienthucuc.vn/dich-vu-y-te/kham-suc-khoe-doanh-nghiep/">Khám sức khỏe doanh nghiệp</a></li>
-                                <li class="menu-item"><a href="https://benhvienthucuc.vn/thai-san-tron-goi/">Thai sản trọn gói</a></li>
-                                <li class="menu-item"><a href="https://benhvienthucuc.vn/noi-soi-khong-dau/">Nội soi không đau</a></li>
+                                @foreach($dichvuyte as $post)
+                                    <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="menu-item current-menu-ancestor menu-item-has-children">
-                            <a>Đặt khám online</a>
+                            <a> {{ trans('book-schedule.MENU.'.'Đặt khám online') }}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item current-menu-item">
 {{--                                     TODO: add router to navigate to booking page--}}
                                     <a href="{{route('bookSchedule')}}" aria-current="page">
 
-                                        {{ trans('book-schedule.MENU.BOOKING') }}
+                                        {{ trans('book-schedule.MENU.'.'Đặt lịch hẹn') }}
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="tel:123-456-7890">{{ trans('book-schedule.MENU.PHONE') }}</a>
+                                    <a href="tel:123-456-7890">{{ trans('book-schedule.MENU.'.'Liên hệ') }}</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="menu-item"><a>Hỏi đáp chuyên gia</a></li>
+                        <li class="menu-item"><a>{{ trans('book-schedule.MENU.'.'HỎI ĐÁP CHUYÊN GIA') }}</a></li>
                         <li class="menu-item menu-item-has-children">
-                            <a>{{ trans('book-schedule.MENU.SUPPORT') }}</a>
+                            <a>{{ trans('book-schedule.MENU.'.'Hỗ trợ khách hàng') }}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="{{ trans('book-schedule.MENU.PRICE_MOCK_URL') }}">
-                                        {{ trans('book-schedule.MENU.SUPPORT_PRICE') }}
-                                    </a>
-                                </li>
+                                @foreach($Hotrokhachhang as $post)
+                                    <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.NEWS') }}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a href="{{ trans('book-schedule.MENU.MOCK_URL_COVID') }}">
-                                        {{ trans('book-schedule.MENU.NEWS_COVID') }}
+                                    <a href="#">{{ trans('book-schedule.MENU.'.'Đấu thầu') }}
+                                    </a></li>
+                                <li class="menu-item">
+                                    <a href="#">{{ trans('book-schedule.MENU.'.'Tin nóng Covid 19') }}
+                                    </a></li>
+                                <li class="menu-item">
+                                    <a href="#"> {{ trans('book-schedule.MENU.'.'Tin tuyển dụng') }}
+                                    </a></li>
+                                <li class="menu-item">
+                                    <a href="#">{{ trans('book-schedule.MENU.'.'Báo chí nói về Thu Cúc') }}
+                                    </a></li>
+                                <li class="menu-item">
+                                    <a href="#">{{ trans('book-schedule.MENU.'.'Tư vấn trực tuyến') }}
                                     </a></li>
                             </ul>
                         </li>

@@ -23,7 +23,9 @@ class FrontEndSchedule extends Controller
         $gioithieukhoa = Post::all()->where('tagId','=','4');
 
         $gioithieuchung = Post::all()->where('tagId','=','10');
-        return view('pages.schedule')->with(['gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
+        $dichvuyte = Post::all()->where('tagId','=','15');
+        $Hotrokhachhang = Post::all()->where('tagId','=','16');
+        return view('pages.schedule')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
     }
 
     /**

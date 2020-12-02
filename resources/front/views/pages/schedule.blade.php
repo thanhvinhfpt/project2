@@ -1,14 +1,14 @@
-@extends('layouts.master')
+@extends('layouts.postMaster')
 @section('content')
 
-    <section class="col-md-8" style="margin:50px auto; background-color:#2b7f4b">
+    <section class="col-md-6" style="margin:50px auto; background-color:#2b7f4b">
         <div class="wrap">
-        <div class="modal-body">
+            <div class="modal-body">
             <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" >
-            @csrf 
+            @csrf
             <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
                 <div class="row">
-                    
+
                     <div class="col-md-8">
                         <div class="form-group">
                             <label for="name" style="padding: 5px; text-transform:uppercase; color:#fff;">Họ và tên <span style="color:tomato;">*</span></label>
@@ -23,7 +23,7 @@
                             <span id="message_code"></span>
                             </div>
                     </div>
-                    
+
                 </div>
                 <div class="row" >
                 <div class="col-md-6">
@@ -39,7 +39,7 @@
                             <input type="number" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
                             <span id="message_phone"></span>
                         </div>
-                    
+
                     </div>
                 </div>
                 <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Lịch hẹn</h4>
@@ -55,14 +55,14 @@
                         </select>
                         <span id="message_clinic"></span>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6">
                     <div class="form-group">
                         <label for="doctor" style="padding: 5px; text-transform:uppercase; color:#fff;">Bác Sĩ</label>
                         <select  class="form-control" id="doctor" name="doctor">
                         <option value="">Chọn Bác Sĩ</option>
-                            
+
                         </select>
                         <span id="message_clinic"></span>
                         </div>
@@ -98,7 +98,7 @@
                         <div class="form-group ">
                             <label for="date" style="padding: 5px; text-transform:uppercase; color:#fff;">Ngày khám <span style="color:tomato;">*</span></label>
                             <input type="date" min= "" max= "" name="date" id="date" class="form-control" placeholder="End Date" required />
-                            
+
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 </div>
                 </form>
         </div>
-            
+
         </div>
     </section>
 
@@ -130,7 +130,7 @@
 <script type="text/javascript">
     $('select#clinic').change(function() {
     $('select#doctor').children().remove();
-    $('select#doctor').append(new Option("Select Doctor", ""));    
+    $('select#doctor').append(new Option("Select Doctor", ""));
     var clinicID =  $('#clinic').find(":selected").val();
     var data = {"clinicID": clinicID}
     $.ajax({
@@ -143,7 +143,7 @@
            for(var i = 0; i<listDoctor.length; i++){
             var nameDoctor = (listDoctor[i].name);
             var idDoctor = (listDoctor[i].id);
-            $('#doctor').append(new Option(nameDoctor, idDoctor)); 
+            $('#doctor').append(new Option(nameDoctor, idDoctor));
            }
         },
     });
@@ -179,17 +179,17 @@
     window.onload = function(){
     var d = new Date();
     var newdate = new Date(d);
-    newdate.setDate(newdate.getDate() + 30); 
+    newdate.setDate(newdate.getDate() + 30);
     var nd = new Date(newdate);
     // Build ISO 8601 format date string
-    var s = d.getFullYear() + '-' + 
+    var s = d.getFullYear() + '-' +
             ('0' + (d.getMonth()+1)).slice(-2) + '-' +
             ('0' + d.getDate()).slice(-2);
-    var n = nd.getFullYear() + '-' + 
+    var n = nd.getFullYear() + '-' +
             ('0' + (nd.getMonth()+1)).slice(-2) + '-' +
             ('0' + nd.getDate()).slice(-2);
     // Set the value of the value and min attributes
-    
+
     var node = document.querySelector('input#date');
     if (node) {
     node.setAttribute('min', s);
