@@ -89,7 +89,7 @@
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
-                                
+
 
                             </ul>
                         </li>
