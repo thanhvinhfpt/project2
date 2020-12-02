@@ -118,7 +118,7 @@ a {
 
 .sec16_col2_col h4 span {
     padding-right: 2rem;
-    background: url(../images/sec16_1.png) right 0 no-repeat;
+    /*background: url(../images/sec16_1.png) right 0 no-repeat;*/
 }
 
 .sec16_col2_col h5 {
@@ -353,7 +353,7 @@ a {
 .sec_clients .h_3 {
     display: block;
     position: relative;
-    background: url(../images/sec17_1.png) right 0 no-repeat;
+    /*background: url(../images/sec17_1.png) right 0 no-repeat;*/
     background-size: 23px;
     z-index: 10;
     padding: .75rem 0;
@@ -592,4 +592,10 @@ a {
         background-size: 22px;
     }
 
+}
+
+@media screen and (max-width: 999px) and (min-width: 320px) {
+    .container12 .wrap > div {
+        display: block!important;
+    }
 }

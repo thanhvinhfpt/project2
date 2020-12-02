@@ -1,4 +1,4 @@
-<div id="secondary">
+<div id="secondary" class="ml-auto">
     <div class="sb_row">
         <div class="sb_row2_content widget_nav_menu">
             <span class="h_4">
@@ -157,19 +157,19 @@
                         <div class="owl-stage-outer">
                             <div class="owl-stage"
                                  style="transform: translate3d(-955px, 0px, 0px); transition: all 0s ease 0s; width: 3824px;">
-                                <div class="owl-item cloned" style="width: 318.625px;">
+                                <div class="owl-item active" style="width: 318.625px;">
                                     <li style="display: initial; width: 100%;" class="slide-70721 ms-image item"><img
                                             height="397" width="370" alt="" class="slider-33901 slide-70721 owl-lazy"
                                             src="{{ URL::asset('imgs/side-bar-img/1.jpg') }}">
                                     </li>
                                 </div>
-                                <div class="owl-item cloned" style="width: 318.625px;">
+                                <div class="owl-item" style="width: 318.625px;">
                                     <li style="display: initial; width: 100%;" class="slide-70722 ms-image item"><img
                                             height="397" width="370" alt="" class="slider-33901 slide-70722 owl-lazy"
                                             src="{{ URL::asset('imgs/side-bar-img/2.jpg') }}">
                                     </li>
                                 </div>
-                                <div class="owl-item cloned" style="width: 318.625px;">
+                                <div class="owl-item" style="width: 318.625px;">
                                     <li style="display: initial; width: 100%;" class="slide-70723 ms-image item"><img
                                             height="397" width="370" alt="" class="slider-33901 slide-70723 owl-lazy"
                                             src="{{ URL::asset('imgs/side-bar-img/3.jpg') }}">
@@ -190,9 +190,8 @@
         </div>
     </div>
     <div class="sb_row">
-        <div class="youtube">
-            <iframe src="https://www.youtube.com/embed/YulgVQzsQ-I">
-            </iframe>
+        <div class="youtube" data-embed="YulgVQzsQ-I" data-thumb="hq">
+            <div class="play-button"></div>
             <img src="https://img.youtube.com/vi/YulgVQzsQ-I/hqdefault.jpg" alt="undefined">
         </div>
     </div>

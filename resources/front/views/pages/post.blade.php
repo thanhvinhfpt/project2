@@ -1,9 +1,8 @@
-@extends('layouts.postMaster')
+@extends('layouts.master')
 @section('content')
 
-<section class="container12 sec17" style="margin-top: 30px;margin-bottom: 50px">
-    <div class="wrap">
-        <div style="margin-top: 10px;margin-bottom: 1px">
+<section class="container12 sec17" style="margin: 0 30px 0 0;">
+        <div>
             <p style="color: #2a7f49"><u>Trang chủ >>  @foreach($lsTag as $tag)
                         @if($tag->id == $post->tagId)
                             {{$tag->name}}
@@ -14,7 +13,6 @@
             <p style="font-size: 30px;color: #2a7f49;margin-bottom: 5px"><strong>{{$post->title}}</strong></p>
         </div>
 
-        <p>{!! $post->body !!}</p>
-    </div>
+        <p style="margin: 5px" class="content">{!! $post->body !!}</p>
 </section>
 @endsection

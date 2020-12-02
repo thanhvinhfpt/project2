@@ -38,7 +38,7 @@ return [
         'Sứ mệnh – Tầm nhìn'=>'Sứ mệnh – Tầm nhìn',
         'Cơ sở vật chất'=>'Cơ sở vật chất',
         'Văn hóa Thu Cúc'=>'Văn hóa Thu Cúc',
-        'Obstetric Departement'=>'Khoa phụ sản',
+        'Khoa phụ sản'=>'Khoa phụ sản',
         'Chuyên khoa Gan mật'=>'Chuyên khoa Gan mật',
         'Chuyên khoa Tiêu hóa'=>'Chuyên khoa Tiêu hóa',
         'Chuyên khoa cơ xương khớp'=>'Chuyên khoa cơ xương khớp',

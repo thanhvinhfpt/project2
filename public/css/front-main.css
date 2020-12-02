@@ -190,3 +190,12 @@ img {
         width: 100%
     }
 }
+
+section.container12.sec17 p.content ~ p:not(.content) {
+    margin: 5px 0;
+}
+
+
+section.container12.sec17 ul li {
+    margin: 8px 0;
+}

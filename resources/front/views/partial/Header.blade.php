@@ -95,9 +95,9 @@
                         </li>
                         <li class="menu-item menu-item-has-children">
                             <a href="https://google.com.vn/chuyen-khoa/">{{ trans('book-schedule.MENU.SPECIALIST') }}</a>
-                            <ul class="sub-menu">
+                            <ul class="sub-menu" style="width: 550px">
                                 @foreach($gioithieukhoa as $post)
-                                    <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
+                                    <li style="width: 50%" class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

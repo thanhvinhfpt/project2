@@ -1,4 +1,4 @@
-@extends('layouts.postMaster')
+@extends('layouts.master')
 @section('content')
 
     <section class="col-md-6" style="margin:50px auto; background-color:#2b7f4b">
