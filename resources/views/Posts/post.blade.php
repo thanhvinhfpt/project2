@@ -157,7 +157,7 @@
 
             </tbody>
         </table>
-        {{--        {{$lsPost->links("pagination::bootstrap-4")}}--}}
+{{--                {{$lsPost->links("pagination::bootstrap-4")}}--}}
     </div>
 </div>
 

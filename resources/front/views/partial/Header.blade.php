@@ -79,41 +79,19 @@
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.INTRODUCTION') }}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="{{route('FrontendPost',6)}}">Lời giới thiệu</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',7)}}">Sứ mệnh và tầm nhìn</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',8)}}">Cơ sở vật chất</a></li>
-                                <li class="menu-item"><a href="#">Đội ngũ Bác sĩ</a></li>
-                                <li class="menu-item"><a href="#">Hoạt động bệnh viện</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',9)}}">Văn hóa Thu cúc</a></li>
-                                <li class="menu-item"><a href="#">Thư viện hình ảnh</a></li>
+                                @foreach($gioithieuchung as $post)
+                                    <li class="menu-item"><a href="{{route('FrontendPost',$post->id)}}">{{$post->title}}</a></li>
+                                @endforeach
+
 
                             </ul>
                         </li>
-                        <li class="menu-item menu-item-has-children">
+                        <li class="menu-item current-menu-ancestor menu-item-has-children">
                             <a href="#">Chuyên khoa</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="{{route('FrontendPost',10)}}">Khoa phụ sản</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',11)}}">Chuyên khoa gan mật</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',12)}}">Chuyên khoa tiêu hóa</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',13)}}">Chuyên khoa cơ xương khớp</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',14)}}">Chuyên khoa tai mũi họng</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',15)}}">Chuyên khoa Da liễu</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',16)}}">Chuyên khoa Mắt </a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',17)}}">Khoa dược</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',18)}}">Đơn vị chuẩn đoán hình ảnh</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',19)}}">Phòng cấp cứu</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',20)}}">Khoa ngoại</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',21)}}">Chuyên khoa tim mạch</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',22)}}">Chuyên khoa nội tiết</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',23)}}">Chuyên khoa nhi</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',24)}}">Khoa răng hàm mặt</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',25)}}">Chuyên khoa nội thần kinh</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',26)}}">Chuyên khoa hô hấp</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',27)}}">Đơn vị xét nghiệm</a></li>
-                                <li class="menu-item"><a href="{{route('FrontendPost',28)}}">Khu vực điều trị</a></li>
-
-
-
+                                @foreach($lsClinic as $post)
+                                    <li class="menu-item"><a href="{{route('FrontendPost',$post->id)}}">{{$post->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="menu-item current-menu-ancestor menu-item-has-children">

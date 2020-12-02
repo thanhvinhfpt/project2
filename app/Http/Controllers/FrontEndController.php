@@ -9,7 +9,9 @@ use App\Models\Post;
 class FrontEndController extends Controller
 {
     public function index(){
-        return view('pages.home');
+        $lsClinic = Post::all()->where('tagId','=','4');
+        $gioithieuchung = Post::all()->where('tagId','=','10');
+        return view('pages.home')->with(['lsClinic'=>$lsClinic,'gioithieuchung'=>$gioithieuchung]);
     }
     public function show($id){
         $post = Post::find($id);
