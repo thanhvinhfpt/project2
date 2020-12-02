@@ -12,6 +12,7 @@ class FrontEndController extends Controller
 {
     public function home(){
 
+
         $articles = [
             (object) [
                 'title' => 'WHO chỉ trích y tế một số nước như hàng không giá rẻ 1',

@@ -8,6 +8,8 @@ use App\Models\Clinic;
 use App\Models\Post;
 use App\Models\Doctor;
 use App\Models\ExaminationSchedule;
+use Illuminate\Support\Facades\App;
+
 class FrontEndSchedule extends Controller
 {
     /**
@@ -15,8 +17,24 @@ class FrontEndSchedule extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
+        $lsClinic = Clinic::all();
+        $lsDoctor = Doctor::all();
+        $gioithieukhoa = Post::all()->where('tagId','=','4');
+
+        $gioithieuchung = Post::all()->where('tagId','=','10');
+        $dichvuyte = Post::all()->where('tagId','=','15');
+        $Hotrokhachhang = Post::all()->where('tagId','=','16');
+        return view('pages.schedule')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
+    }
+    public function index($locale)
+    {
+        if($locale != null){
+
+           App::setLocale($locale);
+
+        }
 
         $lsClinic = Clinic::all();
         $lsDoctor = Doctor::all();
@@ -43,7 +61,7 @@ class FrontEndSchedule extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *- @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
