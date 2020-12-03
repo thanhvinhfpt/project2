@@ -4,7 +4,7 @@
     <section class="col-md-6" style="margin:50px auto; background-color:#2b7f4b">
         <div class="wrap">
             <div class="modal-body">
-            <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" >
+            <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
             @csrf
             <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
                 <div class="row">
@@ -12,14 +12,14 @@
                     <div class="col-md-8">
                         <div class="form-group">
                             <label for="name" style="padding: 5px; text-transform:uppercase; color:#fff;">Họ và tên <span style="color:tomato;">*</span></label>
-                            <input type="text" class="form-control" id="name"  name="name" placeholder="Nhập họ tên" required>
+                            <input type="text" class="form-control" id="name"  name="name" placeholder="Nhập họ tên" >
                             <span id="message_code"></span>
                             </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="identity" style="padding: 5px; text-transform:uppercase; color:#fff;">cmnd</label>
-                            <input type="number" class="form-control" id="identity"  name="identity" placeholder="Nhập CMND">
+                            <label for="identity" style="padding: 5px; text-transform:uppercase; color:#fff;">cmnd <span style="color:tomato;">*</span></label>
+                            <input type="number" class="form-control" id="identity"  name="identity" placeholder="Nhập CMND" >
                             <span id="message_code"></span>
                             </div>
                     </div>
@@ -29,14 +29,14 @@
                 <div class="col-md-6">
                         <div class="form-group">
                             <label for="email" style="padding: 5px; text-transform:uppercase; color:#fff;">Địa chỉ Email <span style="color:tomato;">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email" required >
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email">
                             <span id="message_name"></span>
                             </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="phone" style="padding: 5px; text-transform:uppercase; color:#fff;">Số điện thoại <span style="color:tomato;">*</span></label>
-                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại" >
                             <span id="message_phone"></span>
                         </div>
 
@@ -47,7 +47,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                         <label for="clinic" style="padding: 5px; text-transform:uppercase; color:#fff;">Chuyên khoa <span style="color:tomato;">*</span></label>
-                        <select  class="form-control" id="clinic" name="clinic" required>
+                        <select  class="form-control" id="clinic" name="clinic" >
                         <option value="">Chọn Chuyên Khoa</option>
                             @foreach($lsClinic as $clinic)
                             <option value="{{$clinic->id}}" >{{$clinic->name}}</option>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-md-6">
                     <div class="form-group">
-                        <label for="doctor" style="padding: 5px; text-transform:uppercase; color:#fff;">Bác Sĩ</label>
+                        <label for="doctor" style="padding: 5px; text-transform:uppercase; color:#fff;">Bác Sĩ <span style="color:tomato;">*</span></label>
                         <select  class="form-control" id="doctor" name="doctor">
                         <option value="">Chọn Bác Sĩ</option>
 
@@ -71,7 +71,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group ">
-                            <label for="time" style="padding: 5px; text-transform:uppercase; color:#fff;">Giờ Khám</label>
+                            <label for="time" style="padding: 5px; text-transform:uppercase; color:#fff;">Giờ Khám <span style="color:tomato;">*</span></label>
                             <select  class="form-control" id="time" name="time">
                             <option value="">Chọn Ngày Giờ</option>
                             <option value="07:00 - 07:30 AM">07:00 - 07:30 AM</option>
@@ -97,7 +97,7 @@
                     <div class="col-md-6">
                         <div class="form-group ">
                             <label for="date" style="padding: 5px; text-transform:uppercase; color:#fff;">Ngày khám <span style="color:tomato;">*</span></label>
-                            <input type="date" min= "" max= "" name="date" id="date" class="form-control" placeholder="End Date" required />
+                            <input type="date" min= "" max= "" name="date" id="date" class="form-control" placeholder="End Date" />
 
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng</label>
+                            <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng <span style="color:tomato;">*</span></label>
                             <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng"></textarea>
                             <span id="message_code"></span>
                             </div>
@@ -119,6 +119,7 @@
                     <!-- <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button> -->
                     <button type="submit" class="btn btn-success btn-pill" onclick="return validateBookSchedule()">Đặt lịch</button>
                 </div>
+                <span id="form-noti"></span>
                 </form>
         </div>
 
@@ -201,12 +202,80 @@
 </script>
 <script>
     function validateBookSchedule(){
-        var message = $("#message").text();
-        if(message != ""){
-            return false;
-        }else{
-            return true;
+        var name = document.ScheduleForm.name;
+        var identity = document.ScheduleForm.identity;
+        var ph = /^[0-9]+$/;
+        var email = document.ScheduleForm.email;
+        var phone = document.ScheduleForm.phone;
+        var clinic = document.ScheduleForm.clinic;
+        var doctor = document.ScheduleForm.doctor;
+        var date = document.ScheduleForm.date;
+        var time = document.ScheduleForm.time;
+        var symptom = document.ScheduleForm.symptom;
+
+        if (name.value == "") {
+		window.alert("Vui lòng nhập họ tên đầy đủ.");
+		name.focus();
+		return false;
         }
+        if (identity.value == "") {
+		window.alert("Vui lòng nhập số chứng minh nhân dân.");
+		identity.focus();
+		return false;
+	    }
+	    if (phone.value == "") {
+		window.alert("Vui lòng nhập số điện thoại.");
+		phone.focus();
+		return false;
+	    }
+	    if (!ph.test(phone.value)) {
+		window.alert("Vui lòng nhập số điện thoại kiểu số");
+		phone.focus();
+		return false;
+	    }
+	    if (email.value == "") {
+		window.alert("Vui lòng nhập Email đầy đủ.");
+		email.focus();
+		return false;
+	    }
+	    if (email.value.indexOf("@", 0) < 0) {
+		window.alert("Vui lòng nhập Email chính xác.");
+		email.focus();
+		return false;
+	    }
+	    if (email.value.indexOf(".", 0) < 0) {
+		window.alert("Vui lòng nhập Email chính xác.");
+		email.focus();
+		return false;
+        }
+        if (doctor.value == "") {
+		window.alert("Vui lòng chọn bác sĩ mà bạn muốn đặt lịch.");
+		doctor.focus();
+		return false;
+        }
+        if (clinic.value == "") {
+		window.alert("Vui lòng chọn chuyên khoa mà bạn muốn đặt lịch.");
+		clinic.focus();
+		return false;
+        }
+        if (time.value == "") {
+		window.alert("Vui lòng chọn giờ khám mà bạn muốn đặt lịch.");
+		time.focus();
+		return false;
+        }
+        if (date.value == "") {
+		window.alert("Vui lòng chọn ngày khám mà bạn muốn đặt lịch.");
+		date.focus();
+		return false;
+	    }
+	    if (symptom.value == "") {
+		window.alert("Vui lòng Mô tả triệu chứng bạn cần tư vấn.");
+		symptom.focus();
+		return false;
+	    }
+	return true;
     }
 </script>
+
+
 @endsection
