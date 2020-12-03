@@ -79,5 +79,6 @@ Nhà hàng Bệnh viện Thu Cúc: Sang trọng – Tiện nghi',
         'Báo chí nói về Thu Cúc'=>'Báo chí nói về Thu Cúc',
         'Tư vấn trực tuyến'=>'Tư vấn trực tuyến',
         'HỎI ĐÁP CHUYÊN GIA'=>'HỎI ĐÁP CHUYÊN GIA',
+        'Đội ngũ Bác sĩ'=>'Đội ngũ Bác sĩ',
     ]
 ];

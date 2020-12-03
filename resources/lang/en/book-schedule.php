@@ -15,7 +15,7 @@ return [
         'INFRASTRUCTURE' => 'INFRASTRUCTURE',
         'DOCTORS_TEAM' => 'DOCTORS_TEAM',
         'SPECIALIST' => 'SPECIALIST',
-        'OBSTETRICS' => 'OBSTETRICS',
+        'Khoa phụ sản' => 'OBSTETRICS',
         'SURGERY' => 'SURGERY',
         'HEPATOLOGY' => 'HEPATOLOGY',
         'CARDIOLOGIST' => 'CARDIOLOGIST',
@@ -79,5 +79,6 @@ Thu Cuc Hospital Restaurant',
         'Báo chí nói về Thu Cúc'=>'Newspapers talked about Thu Cuc',
         'Tư vấn trực tuyến'=>'Online counseling',
         'HỎI ĐÁP CHUYÊN GIA'=>'EXPERTISE QUESTION',
+        'Đội ngũ Bác sĩ'=>'STAFF',
     ]
 ];

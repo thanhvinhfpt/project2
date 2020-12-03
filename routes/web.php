@@ -22,19 +22,17 @@ use App\Http\Controllers\FrontEndController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('pages.home');
-//});
 // frontend
 Route::get('/',[FrontEndController::class,'home'] );
+Route::get('/home/{tagName}',[FrontEndController::class,'showListPost'])->name('lsPost');
+Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
 Route::get('/front/frontEndSchedule', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
 Route::post('/front/frontEndScheduleStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
 
 
-//Auth::routes();
-//Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // backend
 

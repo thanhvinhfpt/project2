@@ -1,3 +1,6 @@
+@php
+$locale = session()->get('locale');
+@endphp
 <header id="header" class="header main-navigation main_menu menu_fixed animated fadeInDown">
     <section class="container12 sec11">
         <div class="wrap">
@@ -13,8 +16,8 @@
                     </span>
                     <span class="sp1">
                          <strong>Ngôn ngữ :</strong>
-                        <a href="#"><img src="{{asset('upload/vi.jpg')}}"></a>
-                        <a href="#"><img src="{{asset('upload/en.jpg')}}"></a>
+                        <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
+                        <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
 
                 </div>
@@ -86,6 +89,7 @@
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.Giới thiệu') }}</a>
                             <ul class="sub-menu">
+                                <li class="menu-item"><a href="{{route('lsPost','Đội Ngũ Bác Sĩ')}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
