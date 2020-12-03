@@ -336,11 +336,11 @@ $locale = session()->get('locale');
                                         <a href="#">
                                             <img class="owl-lazy"
                                                  src="{{ URL::asset('imgs/sec15_1.jpg') }}"
-                                                 alt="Các gói khám sức khỏe"
+                                                 alt="{{ trans('book-schedule.MENU.'.'CÁC GÓI KHÁM SỨC KHỎE') }}"
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#">Các gói khám sức khỏe</a></h3></div>
+                                    <h3><a href="#">{{ trans('book-schedule.MENU.'.'CÁC GÓI KHÁM SỨC KHỎE') }}</a></h3></div>
                             </div>
                             <div class="owl-item cloned" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
@@ -349,10 +349,10 @@ $locale = session()->get('locale');
                                             <img
                                                 class="owl-lazy"
                                                 src="{{ URL::asset('imgs/sec15_2.jpg') }}"
-                                                alt="Tầm soát ung thư" style="opacity: 1;">
+                                                alt="{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}" style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#">Tầm soát ung thư</a></h3></div>
+                                    <h3><a href="#">{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}</a></h3></div>
                             </div>
                             <div class="owl-item cloned" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
@@ -364,8 +364,7 @@ $locale = session()->get('locale');
                                                 alt="Khám sức khỏe doanh nghiệp" style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#" style="letter-spacing: -1px;">Khám sức
-                                            khỏe doanh nghiệp</a></h3></div>
+                                    <h3><a href="#" style="letter-spacing: -1px;">{{ trans('book-schedule.MENU.'.'KHÁM SỨC KHỎE DOANH NGHIỆP') }}</a></h3></div>
                             </div>
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
@@ -377,7 +376,7 @@ $locale = session()->get('locale');
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a class="modal__open" data-modal-button="modal_1">Bảo hiểm</a></h3></div>
+                                    <h3><a class="modal__open" data-modal-button="modal_1">{{ trans('book-schedule.MENU.'.'Bảo hiểm') }}</a></h3></div>
                             </div>
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
@@ -389,7 +388,7 @@ $locale = session()->get('locale');
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a class="modal__open" data-modal-button="modal_2">Đặt hẹn khám bệnh</a></h3>
+                                    <h3><a class="modal__open" data-modal-button="modal_2">{{ trans('book-schedule.MENU.'.'ĐẶT HẸN KHÁM BỆNH') }}</a></h3>
                                 </div>
                             </div>
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
@@ -402,7 +401,7 @@ $locale = session()->get('locale');
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#">Các gói khám sức khỏe</a></h3></div>
+                                    <h3><a href="#">{{ trans('book-schedule.MENU.'.'CÁC GÓI KHÁM SỨC KHỎE') }}</a></h3></div>
                             </div>
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">

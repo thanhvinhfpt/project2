@@ -9,7 +9,11 @@ return [
     'TOOL_TIP_IMAGE_01' => 'Bệnh viện sang xịn mịn',
     'TOOL_TIP_IMAGE_02' => 'Bệnh viện sang xịn mịn',
     'MENU' => [
-
+        'Bảo hiểm'=>'Insurrance',
+        'ĐẶT HẸN KHÁM BỆNH'=>'BOOKING A EXAMINATION',
+        'CÁC GÓI KHÁM SỨC KHỎE'=>'HEALTH EXAMINATION PACKAGES',
+        'TẦM SOÁT UNG THƯ'=>'CANCER SCREENING',
+        'KHÁM SỨC KHỎE DOANH NGHIỆP'=>'BUSINESS HEALTH EXAMINATION',
         'Giới thiệu' => 'INTRODUCTION ',
         'MISSION_VISION' => 'MISSION_VISION',
         'INFRASTRUCTURE' => 'INFRASTRUCTURE',

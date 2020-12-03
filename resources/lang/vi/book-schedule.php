@@ -9,7 +9,8 @@ return [
     'TOOL_TIP_IMAGE_01' => 'Bệnh viện sang xịn mịn',
     'TOOL_TIP_IMAGE_02' => 'Bệnh viện sang xịn mịn',
     'MENU' => [
-
+        'Bảo hiểm'=>'Bảo hiểm',
+        'ĐẶT HẸN KHÁM BỆNH'=>'ĐẶT HẸN KHÁM BỆNH',
         'Giới thiệu' => 'Giới thiệu ',
         'MISSION_VISION' => 'MISSION_VISION',
         'INFRASTRUCTURE' => 'INFRASTRUCTURE',
