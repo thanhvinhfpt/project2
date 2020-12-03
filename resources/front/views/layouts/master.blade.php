@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1">
     <meta name="description" content="{{trans(('book-schedule.META_CONTENT'))}}">
-    <link rel="icon" href="{{URL::asset('imgs/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('upload/tải xuống.png')}}" type="image/x-icon">
 
     <!-- CSRF Token -->
 {{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}

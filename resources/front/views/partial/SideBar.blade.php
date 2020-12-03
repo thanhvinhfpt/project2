@@ -2,42 +2,42 @@
     <div class="sb_row">
         <div class="sb_row2_content widget_nav_menu">
             <span class="h_4">
-                <a href="#">Giá khám chữa bệnh</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Giá khám chữa bệnh') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Thai sản trọn gói</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Thai sản trọn gói') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Thẻ khám bệnh gia đình</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Thẻ khám bệnh gia đình') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Đăng ký khám tiêu hóa</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Đăng ký khám tiêu hóa') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Giấy phép hoạt động</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Giấy phép hoạt động') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Hướng dẫn khám bệnh</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Hướng dẫn khám bệnh') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Hoạt động bệnh viện</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Hoạt động bệnh viện') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Báo chí nói về FPTMedicare</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Báo chí nói về FPTMedicare') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Thư viện Hình ảnh</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Thư viện Hình ảnh') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Thư viện Video</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Thư viện Video') }}</a>
             </span>
             <span class="h_4">
-                <a href="#">Gửi ý kiến phản hồi</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'Gửi ý kiến phản hồi') }}</a>
             </span>
         </div>
     </div>
     <div class="section_accordion">
-        <div class="sb_title"><span class="h_4 title_widget">Hỏi đáp</span></div>
+        <div class="sb_title"><span class="h_4 title_widget">{{ trans('book-schedule.MENU.'.'Hỏi đáp') }}</span></div>
         <div class="sb_row_content">
             <div class="accordion_row">
                 <div class="accordion">

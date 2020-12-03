@@ -3,7 +3,7 @@
     <div class="sec17_col1" id="primary">
         <h2 class="title_shadow_bvtc row2" style="margin-top: 24px;">
             <span>
-                <a href="#">Đội ngũ bác sĩ</a>
+                <a href="#">{{ trans('book-schedule.MENU.'.'ĐỘI NGŨ BÁC SĨ') }}</a>
             </span>
         </h2>
         <div class="sec17_col1_row2">
@@ -29,24 +29,24 @@
                 </div>
             </div>
         </div>
-        <h2 class="title_shadow_bvtc row3"><span>Tư vấn trực tuyến</span></h2>
+        <h2 class="title_shadow_bvtc row3"><span>{{ trans('book-schedule.MENU.'.'TƯ VẤN TRỰC TUYẾN') }}</span></h2>
         <div class="sec17_col1_row3">
             <ul class="d_flex">
                 <li>
                     <a href="#">
                         <img src="https://i1-suckhoe.vnecdn.net/2020/10/22/trung-tam-hy-vong-1603329226-5898-1603329690.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=RQdeHUALZmFGHVB-SrJCFQ" alt="Tư vấn trực tuyến">
-                        <h4>Tư vấn trực tuyến</h4>
+                        <h4>{{ trans('book-schedule.MENU.'.'TƯ VẤN TRỰC TUYẾN') }}</h4>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <img src="https://i1-suckhoe.vnecdn.net/2020/12/01/h1-1606816314-3637-1606816802.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=OQp6nuI-IQo5ChIsHNl-QQ" alt="Tư vấn khám chữa bệnh">
-                        <h4>Tư vấn khám chữa bệnh</h4>
+                        <h4>{{ trans('book-schedule.MENU.'.'TƯ VẤN KHÁM CHỮA BÊNH') }}</h4>
                     </a>
                 </li>
             </ul>
         </div>
-        <h2 class="title_shadow_bvtc row4"><span><a href="#">Tin tức - Sự kiện</a></span></h2>
+        <h2 class="title_shadow_bvtc row4"><span><a href="#">{{ trans('book-schedule.MENU.'.'TIN TỨC-SỰ KIỆN') }}</a></span></h2>
         <div class="sec17_col1_row4">
             <ul class="d_flex">
                 <li class="d_flex">

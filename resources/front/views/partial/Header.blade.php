@@ -1,6 +1,4 @@
-@php
-$locale = session()->get('locale');
-@endphp
+
 <header id="header" class="header main-navigation main_menu menu_fixed animated fadeInDown">
     <section class="container12 sec11">
         <div class="wrap">
@@ -350,6 +348,7 @@ $locale = session()->get('locale');
                                                 class="owl-lazy"
                                                 src="{{ URL::asset('imgs/sec15_2.jpg') }}"
                                                 alt="{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}" style="opacity: 1;">
+
                                         </a>
                                     </span>
                                     <h3><a href="#">{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}</a></h3></div>
@@ -361,7 +360,7 @@ $locale = session()->get('locale');
                                             <img
                                                 class="owl-lazy"
                                                 src="{{ URL::asset('imgs/sec15_6.jpg') }}"
-                                                alt="Khám sức khỏe doanh nghiệp" style="opacity: 1;">
+                                                alt="{{ trans('book-schedule.MENU.'.'KHÁM SỨC KHỎE DOANH NGHIỆP') }}" style="opacity: 1;">
                                         </a>
                                     </span>
                                     <h3><a href="#" style="letter-spacing: -1px;">{{ trans('book-schedule.MENU.'.'KHÁM SỨC KHỎE DOANH NGHIỆP') }}</a></h3></div>
@@ -372,7 +371,7 @@ $locale = session()->get('locale');
                                         <a class="modal__open" data-modal-button="modal_1">
                                             <img class="owl-lazy"
                                                  src="{{ URL::asset('imgs/sec15_3.jpg') }}"
-                                                 alt="Bảo hiểm"
+                                                 alt="{{ trans('book-schedule.MENU.'.'Bảo hiểm') }}"
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
@@ -384,7 +383,7 @@ $locale = session()->get('locale');
                                         <a class="modal__open" data-modal-button="modal_2">
                                             <img class="owl-lazy"
                                                  src="{{ URL::asset('imgs/sec15_4.jpg') }}"
-                                                 alt="Đặt hẹn khám bệnh"
+                                                 alt="{{ trans('book-schedule.MENU.'.'ĐẶT HẸN KHÁM BỆNH') }}"
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
@@ -397,7 +396,7 @@ $locale = session()->get('locale');
                                         <a href="#">
                                             <img class="owl-lazy"
                                                  src="{{ URL::asset('imgs/sec15_1.jpg') }}"
-                                                 alt="Các gói khám sức khỏe"
+                                                 alt="{{ trans('book-schedule.MENU.'.'CÁC GÓI KHÁM SỨC KHỎE') }}"
                                                  style="opacity: 1;">
                                         </a>
                                     </span>
@@ -410,10 +409,10 @@ $locale = session()->get('locale');
                                             <img
                                                 class="owl-lazy"
                                                 src="{{ URL::asset('imgs/sec15_2.jpg') }}"
-                                                alt="Tầm soát ung thư" style="opacity: 1;">
+                                                alt="{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}" style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#">Tầm soát ung thư</a></h3></div>
+                                    <h3><a href="#">{{ trans('book-schedule.MENU.'.'TẦM SOÁT UNG THƯ') }}</a></h3></div>
                             </div>
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
@@ -422,11 +421,10 @@ $locale = session()->get('locale');
                                             <img
                                                 class="owl-lazy"
                                                 src="{{ URL::asset('imgs/sec15_6.jpg') }}"
-                                                alt="Khám sức khỏe doanh nghiệp" style="opacity: 1;">
+                                                alt="{{ trans('book-schedule.MENU.'.'KHÁM SỨC KHỎE DOANH NGHIỆP') }}" style="opacity: 1;">
                                         </a>
                                     </span>
-                                    <h3><a href="#" style="letter-spacing: -1px;">Khám sức
-                                            khỏe doanh nghiệp</a></h3></div>
+                                    <h3><a href="#" style="letter-spacing: -1px;">{{ trans('book-schedule.MENU.'.'KHÁM SỨC KHỎE DOANH NGHIỆP') }}</a></h3></div>
                             </div>
                         </div>
                     </div>
@@ -446,19 +444,19 @@ $locale = session()->get('locale');
                 <div class="sec16_col1"> <span class=""><i class="fa fa-volume-control-phone" aria-hidden="true"></i></span></div>
                 <div class="sec16_col2 d_flex">
                     <div class="sec16_col2_col">
-                        <h4><span>Hotline</span></h4>
+                        <h4><span>HOTLINE</span></h4>
                         <h5><span><a>0988 888 888</a></span></h5>
                     </div>
                     <div class="sec16_col2_col">
-                        <h4><span>Tổng đài</span></h4>
+                        <h4><span>{{ trans('book-schedule.MENU.'.'TỔNG ĐÀI') }}</span></h4>
                         <h5><span><a>1900 88 88 88</a></span></h5>
                     </div>
                     <div class="sec16_col2_col">
-                        <h4><span>Cấp cứu 24/24</span></h4>
+                        <h4><span>{{ trans('book-schedule.MENU.'.'CẤP CỨU 24/24') }}</span></h4>
                         <h5><span><a>0243 888 8888</a></span></h5>
                     </div>
                     <div class="sec16_col2_col">
-                        <h4><span>Địa chỉ</span></h4>
+                        <h4><span>{{ trans('book-schedule.MENU.'.'ĐỊA CHỈ') }}</span></h4>
                         <h5>
                             <span>
                                 <a href="https://www.google.com/maps/place/8+T%C3%B4n+Th%E1%BA%A5t+Thuy%E1%BA%BFt,+M%E1%BB%B9+%C4%90%C3%ACnh,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i/@21.0287847,105.7796388,17z/data=!3m1!4b1!4m5!3m4!1s0x313454b32ecb92db:0x3964e6238a3bd088!8m2!3d21.0287847!4d105.7818275" target="_blank" rel="noopener" class="external">
