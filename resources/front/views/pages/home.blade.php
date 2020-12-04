@@ -14,7 +14,7 @@
                             <div class="owl-stage-outer">
                                 <div class="owl-stage" style="transform: translate3d(-15704px, 0px, 0px);">
                                     @for ($i = 0; $i < 10; $i++)
-                                        <div class="owl-item cloned" style="width: 785.219px;">
+                                        <div class="owl-item" style="width: 785.219px;">
                                             <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
                                                 <a href="https://benhvienthucuc.vn/bac-si-ckii-nguyen-thi-hang-bac-si-noi-tieu-hoa/" target="_self">
                                                     <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('imgs/doctor-banner.jpg')}}" style="opacity: 1;">

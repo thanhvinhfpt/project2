@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Doctor;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -89,5 +90,28 @@ class FrontEndController extends Controller
         $dichvuyte = Post::all()->where('tag_id','=','15');
         $Hotrokhachhang = Post::all()->where('tag_id','=','16');
             return view('pages.lsPost')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lspost'=>$lsPost,'tag'=>$tag]);
+    }
+
+    public function showListDoctor() {
+        $lsDoctor = Doctor::all();
+        $tag=Tag::find(21);
+        $lsPost = Tag::find(21)->post();
+        $gioithieukhoa = Post::all()->where('tag_id','=','4');
+
+        $gioithieuchung = Post::all()->where('tag_id','=','10');
+        $dichvuyte = Post::all()->where('tag_id','=','15');
+        $Hotrokhachhang = Post::all()->where('tag_id','=','16');
+
+        return view('pages.doctors',
+                [
+                    'lsDoctor' => $lsDoctor,
+                    'gioithieukhoa'=>$gioithieukhoa,
+                    'gioithieuchung'=>$gioithieuchung,
+                    'dichvuyte'=>$dichvuyte,
+                    'lspost'=>$lsPost,
+                    'tag'=>$tag,
+                    'Hotrokhachhang'=>$Hotrokhachhang
+                ]
+        );
     }
 }
