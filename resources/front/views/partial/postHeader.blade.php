@@ -13,8 +13,8 @@
                     </span>
                     <span class="sp1">
                          <strong>Ngôn ngữ :</strong>
-                        <a href="/?locale=vi"><img src="{{asset('upload/vi.jpg')}}"></a>
-                        <a href="/?locale=en"><img src="{{asset('upload/en.jpg')}}"></a>
+                        <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
+                        <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
 
                 </div>
@@ -86,24 +86,19 @@
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.Giới thiệu') }}</a>
                             <ul class="sub-menu">
+                                <li class="menu-item"><a href="{{route('lsPost','Đội Ngũ Bác Sĩ')}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
-                                {{--                                <li class="menu-item"><a href="{{route('FrontendPost',6)}}">Lời giới thiệu</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="{{route('FrontendPost',7)}}">Sứ mệnh và tầm nhìn</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="{{route('FrontendPost',8)}}">Cơ sở vật chất</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="#">Đội ngũ Bác sĩ</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="#">Hoạt động bệnh viện</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="{{route('FrontendPost',9)}}">Văn hóa Thu cúc</a></li>--}}
-                                {{--                                <li class="menu-item"><a href="#">Thư viện hình ảnh</a></li>--}}
+
 
                             </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
                             <a href="https://google.com.vn/chuyen-khoa/">{{ trans('book-schedule.MENU.SPECIALIST') }}</a>
-                            <ul class="sub-menu">
+                            <ul class="sub-menu" style="width: 550px">
                                 @foreach($gioithieukhoa as $post)
-                                    <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
+                                    <li style="width: 50%" class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -167,6 +162,7 @@
             </div>
         </div>
     </section>
+
 
 </header>
 
