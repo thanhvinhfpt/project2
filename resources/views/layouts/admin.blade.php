@@ -171,72 +171,10 @@
             </div>
         </div>
     </aside>
-
-{{--    <div class="page-wrapper">--}}
-{{--        <!-- Header -->--}}
-{{--        <header class="main-header " id="header">--}}
-{{--            <nav class="navbar navbar-static-top navbar-expand-lg">--}}
-{{--                <!-- Sidebar toggle button -->--}}
-{{--                <button id="sidebar-toggler" class="sidebar-toggle">--}}
-{{--                    <span class="sr-only">Toggle navigation</span>--}}
-{{--                </button>--}}
-{{--                <!-- search form -->--}}
-{{--                <div class="navbar-right " style="margin-left: 780px;">--}}
-{{--                    <ul class="nav navbar-nav">--}}
-
-{{--                        <li class="dropdown user-menu">--}}
-{{--                            <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">--}}
-{{--                                <img src="{{asset('assets/img/user/user.png')}}" class="user-image" alt="User Image" />--}}
-{{--                                <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>--}}
-{{--                            </button>--}}
-{{--                            <ul class="dropdown-menu dropdown-menu-right">--}}
-{{--                                <!-- User image -->--}}
-{{--                                <li class="dropdown-header">--}}
-{{--                                    <img src="{{asset('assets/img/user/user.png')}}" class="img-circle" alt="User Image" />--}}
-{{--                                    <div class="d-inline-block">--}}
-{{--                                        Abdus Salam <small class="pt-1">abdus@gmail.com</small>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-
-{{--                                <li>--}}
-{{--                                    <a href="profile.html">--}}
-{{--                                        <i class="mdi mdi-account"></i> My Profile--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="email-inbox.html">--}}
-{{--                                        <i class="mdi mdi-email"></i> Message--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> <i class="mdi mdi-settings"></i> Account Setting </a>--}}
-{{--                                </li>--}}
-
-{{--                                <li class="dropdown-footer">--}}
-{{--                                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
-{{--                                       onclick="event.preventDefault();--}}
-{{--                                          document.getElementById('logout-form').submit();">--}}
-{{--                                        {{ __('Logout') }}--}}
-{{--                                    </a>--}}
-{{--                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                                        @csrf--}}
-{{--                                    </form>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </nav>--}}
-{{--        </header>--}}
-{{--    </div>--}}
-
-{{--</div>--}}
+    @yield('content')
 
 
-{{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>--}}
+
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 
 <script src="{{asset('assets/plugins/charts/Chart.min.js')}}"></script>

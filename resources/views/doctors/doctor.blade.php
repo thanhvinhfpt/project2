@@ -1,6 +1,6 @@
 
 @extends('layouts.admin')
-
+@section('content')
             <div class="page-wrapper">
                       <!-- Header -->
                       <header class="main-header " id="header">
@@ -596,3 +596,4 @@
           $('#message_avata_edit').html("");
         };
 </script>
+@endsection
