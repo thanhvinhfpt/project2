@@ -63,7 +63,8 @@
             <div class="d_flex">
                 <div class="sec12_col1">
                     <a
-                        href="#"
+                        href="{{route('homefrontEnd')}}
+                            "
                         title="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                         <img
                             src="{{asset('assets/img/header/header_hospital_01.jpg')}}"

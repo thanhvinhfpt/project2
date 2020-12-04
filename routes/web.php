@@ -28,8 +28,8 @@ Route::get('/home/{tagName}',[FrontEndController::class,'showListPost'])->name('
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
-Route::get('/front/frontEndSchedule', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
-Route::post('/front/frontEndScheduleStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
+Route::get('/BookingExamination', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
+Route::post('/ExaminationStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
 
 
 

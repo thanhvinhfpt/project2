@@ -1,7 +1,7 @@
 <section class="container12 sec_clients">
     <div class="wrap">
         <div class="">
-            <h2 class="page-header title_shadow_bvtc"><span class="page_header_title">Hợp tác chuyên môn</span></h2>
+            <h2 class="page-header title_shadow_bvtc"><span class="page_header_title">{{trans('book-schedule.MENU.'.'Hợp tác chuyên môn')}}</span></h2>
             <div class="sec_clients_row">
                 <div class="owl-carousel owl-theme owl-loaded owl-drag">
                     <div class="owl-stage-outer">
@@ -105,15 +105,15 @@
                         <p class="foot1_col4_col_map"><a target="_blank" rel="nofollow, noopener" href="https://goo.gl/maps/FYN9RE5nW6Q2" title="Google map"><i class="fa fa-map-marker"></i>&nbsp&nbsp{{ trans('book-schedule.MENU.'.'Xem bản đồ tại đây') }}</a></p>
                         <span><br></span>
                         <p>
-                            <b>Giờ làm việc:{{ trans('book-schedule.MENU.'.'') }}</b> <br>
-                            6h:30 đến 17:00 từ Thứ 2 - Chủ nhật {{ trans('book-schedule.MENU.'.'') }}<br>
-                            Phòng khám Nội - đa khoa từ 6:30 - 17:00 {{ trans('book-schedule.MENU.'.'') }}<br>
-                            Phòng khám Nhi từ 8:00 đến 19:30 {{ trans('book-schedule.MENU.'.'') }}<br>
-                            Cấp cứu: 24/24{{ trans('book-schedule.MENU.'.'') }} <br>
-                            Khoa Phụ Sản từ 7:00 - 19:00. Trực sinh: 24/24 {{ trans('book-schedule.MENU.'.'') }}<br>
-                            Khám Ung bướu: 8:00 - 17:00 {{ trans('book-schedule.MENU.'.'') }}<br>
-                            Khám Tai Mũi Họng: 8:00 – 20:00{{ trans('book-schedule.MENU.'.'') }} <br>
-                            Khám Răng hàm mặt: 8:00 - 17:00{{ trans('book-schedule.MENU.'.'') }}
+                            <b>{{ trans('book-schedule.MENU.'.'Giờ làm việc') }}:</b> <br>
+                             {{ trans('book-schedule.MENU.'.'6h:30 đến 17:00 từ Thứ 2 - Chủ nhật') }}<br>
+                             {{ trans('book-schedule.MENU.'.'Phòng khám Nội - đa khoa từ 6:30 - 17:00') }}<br>
+                             {{ trans('book-schedule.MENU.'.'Phòng khám Nhi từ 8:00 đến 19:30') }}<br>
+                            <br>
+                             {{ trans('book-schedule.MENU.'.'Khoa Phụ Sản từ 7:00 - 19:00') }}<br>
+                             {{ trans('book-schedule.MENU.'.'Khám Ung bướu: 8:00 - 17:00') }}<br>
+                            {{ trans('book-schedule.MENU.'.'Khám Tai Mũi Họng: 8:00 – 20:00') }} <br>
+                            {{ trans('book-schedule.MENU.'.'Khám Răng hàm mặt: 8:00 - 17:00') }}
                         </p>
                     </div>
                     <div class="foot1_col4_col">
@@ -121,19 +121,19 @@
                             <!-- <b>Địa chỉ 2:</b> <br> -->
                             <span class="ttu">{{ config('app.name', 'Hospital')}}</span> <br>
                             {{SiteHelper::$address}} <br>
-                            Cấp cứu (7h-17h): <a>0243 2123 222</a> <br>
+                            {{ trans('book-schedule.MENU.'.'Cấp cứu (7h-17h)') }} :  <a>0243 2123 222</a> <br>
                         </p>
-                        <p class="foot1_col4_col_map"><a target="_blank" rel="nofollow, noopener" href="https://www.google.com/maps/search/FPT+APTECH+Số+8+Tôn+Thất+Thuyết" title="Google map"><i class="fa fa-map-marker"></i> Xem bản đồ tại đây{{ trans('book-schedule.MENU.'.'') }}</a></p>
+                        <p class="foot1_col4_col_map"><a target="_blank" rel="nofollow, noopener" href="https://www.google.com/maps/search/FPT+APTECH+Số+8+Tôn+Thất+Thuyết" title="Google map"><i class="fa fa-map-marker"></i>&nbsp&nbsp{{ trans('book-schedule.MENU.'.'Xem bản đồ tại đây') }}</a></p>
                         <span><br></span>
                         <p>
-                            <b>Giờ làm việc{{ trans('book-schedule.MENU.'.'') }}:</b> <br>
-                            7:00 đến 17:00 từ Thứ 2 - Chủ nhật{{ trans('book-schedule.MENU.'.'') }} <br>
-                            Phòng khám Mắt, Da liễu: 8:00 – 17:00{{ trans('book-schedule.MENU.'.'') }} <br>
-                            Khám Sản phụ khoa: 8:00 – 17:00{{ trans('book-schedule.MENU.'.'') }}<br>
-                            <span><b>Liên hệ{{ trans('book-schedule.MENU.'.'') }}:</b></span> <br>
-                            <a>1900 55 88 92</a>&nbsp;hoặc&nbsp;<a>0902 223 864</a>&nbsp;trong các trường hợp sau: <br>
-                            - Đặt khám{{ trans('book-schedule.MENU.'.'') }} <br>
-                            - Hỗ trợ book phòng cho người bệnh ở tỉnh xa {{ trans('book-schedule.MENU.'.'') }}<br>
+                            <b>{{ trans('book-schedule.MENU.'.'Giờ làm việc') }}:</b> <br>
+                            {{ trans('book-schedule.MENU.'.'7:00 đến 17:00 từ Thứ 2 - Chủ nhật') }} <br>
+                            {{ trans('book-schedule.MENU.'.'Phòng khám Mắt, Da liễu: 8:00 – 17:00') }} <br>
+                            {{ trans('book-schedule.MENU.'.'Khám Sản phụ khoa: 8:00 – 17:00') }}<br>
+                            <span><b>{{ trans('book-schedule.MENU.'.'Liên hệ') }}:</b></span> <br>
+                            <a>1900 55 88 92</a>&nbsp;{{ trans('book-schedule.MENU.'.'hoặc') }}&nbsp;<a>0902 223 864</a>&nbsp;{{ trans('book-schedule.MENU.'.'trong các trường hợp sau') }}: <br>
+                            - {{ trans('book-schedule.MENU.'.'Đặt khám') }} <br>
+                            -  {{ trans('book-schedule.MENU.'.'Hỗ trợ book phòng cho người bệnh ở tỉnh xa') }}<br>
                         </p>
                     </div>
                 </div>

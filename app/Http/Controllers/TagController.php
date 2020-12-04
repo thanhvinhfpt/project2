@@ -14,7 +14,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $lsTag = Tag::all();
+        $lsTag = Tag::paginate(6);
         return view('tags.list')->with(['lsTag'=>$lsTag]);
     }
 

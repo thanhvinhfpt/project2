@@ -13,7 +13,7 @@
                         <a href="tel:{{SiteHelper::$phone_contact}}">{{SiteHelper::$phone_contact}} </a>
                     </span>
                     <span class="sp1">
-                         <strong>{{ trans('book-schedule.MENU.'.'Ngôn ngữ ') }}:</strong>
+                         <strong>{{ trans('book-schedule.MENU.'.'Ngôn ngữ') }}:</strong>
                         <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
                         <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>

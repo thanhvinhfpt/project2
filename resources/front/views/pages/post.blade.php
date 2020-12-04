@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.postMaster')
 @section('content')
 
 <section class="container12 sec17" style="margin: 0 30px 0 0;">
