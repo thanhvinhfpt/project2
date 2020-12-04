@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('content')
         <div class="page-wrapper">
                   <!-- Header -->
                   <header class="main-header " id="header">
@@ -399,5 +399,4 @@
            $('#message_phone_edit').html("");
          };
 </script>
-</body>
-</html>
+@endsection

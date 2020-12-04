@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('content')
       <div class="page-wrapper">
                   <!-- Header -->
           <header class="main-header " id="header">
@@ -312,6 +313,5 @@
 <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/plugins/charts/Chart.min.js"></script>
 <script src="assets/js/chart.js"></script>
-  </body>
-</html>
+@endsection
 
