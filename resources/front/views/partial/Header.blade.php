@@ -13,7 +13,7 @@
                         <a href="tel:{{SiteHelper::$phone_contact}}">{{SiteHelper::$phone_contact}} </a>
                     </span>
                     <span class="sp1">
-                         <strong>Ngôn ngữ :</strong>
+                         <strong>{{ trans('book-schedule.MENU.'.'Ngôn ngữ ') }}:</strong>
                         <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
                         <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
@@ -64,7 +64,7 @@
             <div class="d_flex">
                 <div class="sec12_col1">
                     <a
-                        href="#"
+                        href="{{route('homefrontEnd')}}"
                         title="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                         <img
                             src="{{asset('assets/img/header/header_hospital_01.jpg')}}"
@@ -139,19 +139,19 @@
                             <a>{{ trans('book-schedule.MENU.NEWS') }}</a>
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a href="#">{{ trans('book-schedule.MENU.'.'Đấu thầu') }}
+                                    <a href="{{route('lsPost','Đấu thầu')}}">{{ trans('book-schedule.MENU.'.'Đấu thầu') }}
                                     </a></li>
                                 <li class="menu-item">
-                                    <a href="#">{{ trans('book-schedule.MENU.'.'Tin nóng Covid 19') }}
+                                    <a href="{{route('lsPost','Tin nóng Covid 19')}}">{{ trans('book-schedule.MENU.'.'Tin nóng Covid 19') }}
                                     </a></li>
                                 <li class="menu-item">
-                                    <a href="#"> {{ trans('book-schedule.MENU.'.'Tin tuyển dụng') }}
+                                    <a href="{{route('lsPost','Tin tuyển dụng')}}"> {{ trans('book-schedule.MENU.'.'Tin tuyển dụng') }}
                                     </a></li>
                                 <li class="menu-item">
-                                    <a href="#">{{ trans('book-schedule.MENU.'.'Báo chí nói về Thu Cúc') }}
+                                    <a href="{{route('lsPost','Báo chí nói về Thu Cúc')}}">{{ trans('book-schedule.MENU.'.'Báo chí nói về Thu Cúc') }}
                                     </a></li>
                                 <li class="menu-item">
-                                    <a href="#">{{ trans('book-schedule.MENU.'.'Tư vấn trực tuyến') }}
+                                    <a href="{{route('lsPost','Tư vấn trực tuyến')}}">{{ trans('book-schedule.MENU.'.'Tư vấn trực tuyến') }}
                                     </a></li>
                             </ul>
                         </li>
