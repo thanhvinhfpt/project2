@@ -1,15 +1,14 @@
 @extends('layouts.master')
 @section('content')
 
-    <section class="col-md-6" style="margin:50px auto; background-color:#2b7f4b">
-        <div class="wrap">
+    <section class="col-md-8" style="margin:5px auto; background-color:#2b7f4b">
             <div class="modal-body">
             <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
             @csrf
             <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
                 <div class="row">
 
-                    <div class="col-md-8">
+                    <div class="col-lg-8">
                         <div class="form-group">
                             <label for="name" style="padding: 5px; text-transform:uppercase; color:#fff;">Họ và tên <span style="color:tomato;">*</span></label>
                             <input type="text" class="form-control" id="name"  name="name" placeholder="Nhập họ tên" >
@@ -121,8 +120,6 @@
                 </div>
                 <span id="form-noti"></span>
                 </form>
-        </div>
-
         </div>
     </section>
 
