@@ -25,7 +25,6 @@ use App\Http\Controllers\FrontEndController;
 // frontend
 Route::get('/',[FrontEndController::class,'home'] )->name('homefrontEnd');
 Route::get('/home/{tagName}',[FrontEndController::class,'showListPost'])->name('lsPost');
-Route::get('/list-doctors',[FrontEndController::class,'showListDoctor']);
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 

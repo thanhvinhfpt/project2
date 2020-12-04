@@ -7,25 +7,25 @@
         </div>
         <div class="list_post_cat">
             <ul>
-                @foreach($lsDoctor as $doctor)
+                @foreach($lsPost as $post)
                 <li>
                     <div class="thumb">
                         <a
                             href="https://benhvienthucuc.vn/thay-thuoc-uu-tu-tien-si-bac-si-nguyen-pham-y-nhi/"
-                            title="{{'doctor '.$doctor->name}}">
+                            title="{{$post->title}}">
                             <img
                                 width="350" height="250" src="{{$doctor->image}}"
                                 class="attachment-thumb-400x250 size-thumb-400x250 wp-post-image"
-                                alt="{{'doctor '.$doctor->name}}">
+                                alt="{{$post->coverImage}}">
                         </a>
                     </div>
                     <div class="text">
                         <h2>
                             <a href="#">
-                                {{'Tiến sĩ, Thầy thuốc ưu tú, Bác sĩ Nguyễn Phạm Ý Nhi – Giám đốc Bệnh viện ĐKQT Thu Cúc '.$doctor->name}}
+                                {{$post->title}}
                             </a>
                         </h2>
-                        <p>Giám đốc Bệnh viện Đa khoa Quốc tế Thu Cúc Khen thưởng: Thầy thuốc ưu tú, Huân chương lao động hạng ba, nhiều Bằng khen của Bộ trưởng Bộ y tế, Chủ tịch UBND thành phố Hà Nội trao tặng Là chuyên...</p>
+                        <p> {{$post->body}}</p>
                         <div class="desc d_flex">
                             <span class=""><i class="fa fa-eye" aria-hidden="true"></i> 4.165</span>
                             <span class=""><i class="fa fa-clock-o" aria-hidden="true"></i> {{ time() }}</span>
