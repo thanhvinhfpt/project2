@@ -11,6 +11,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FrontEndSchedule;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\HistoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +48,4 @@ Route::resource('/schedules', ScheduleController::class);
 Route::resource('/employees', EmployeeController::class);
 Route::resource('/post', PostController::class);
 Route::resource('/tag', TagController::class);
+Route::resource('/history', HistoryController::class);

@@ -11132,3 +11132,9 @@ html[dir="rtl"] .sidebar li > a .caret:before {
   margin-top: 12px!important;
   margin-left: 5px!important;
 }
+#exam{
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px auto;
+  
+}

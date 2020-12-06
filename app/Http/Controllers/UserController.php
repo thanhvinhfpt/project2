@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Doctor;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
@@ -12,10 +13,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $lsUser = User::all();
-        return view('users.user')->with(['lsUser'=> $lsUser]);
+        $name = $request->nameSearch;
+        if($name != null){
+            $lsUser = User::where('name','=',$name)->paginate(10);
+        }else {
+            $lsUser = User::paginate(10);
+        }
+        return view('users.user')->with(['lsUser'=> $lsUser, 'name'=>$name]);
     }
 
     /**
@@ -38,9 +44,9 @@ class UserController extends Controller
     {
         $user = new User();
         $user->name = $request->usernameInsert;
-        $user->password = $request->passwordInsert;
+        $user->password = Hash::make($request->passwordInsert);
         $user->email = $request->emailInsert;
-        $user->doctor_code = $request->doctorCode;
+        $user->doctor_code = $request->doctorCodeInsert;
         $user->save();
         return redirect("users");
     }
@@ -74,9 +80,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->idEdit;
+        $user = User::find($id);
+        $user->name = $request->usernameEdit;
+        $user->email = $request->emailEdit;
+        $user->password = Hash::make($request->passwordEdit);
+        $user->save();
+        return redirect("users");
     }
 
     /**
@@ -111,6 +123,16 @@ class UserController extends Controller
         $email = $request->email;
         $user = User::where('email','=',$email)->first();
         if($user != null){
+            return response()->json(['data'=>'Email đã tồn tại, chọn lại']);
+        }else{
+            return response()->json(['data'=>' ']);
+        }
+    }
+
+    public function checkEmailExisitEdit(Request $request){
+        $email = $request->email;
+        $user = User::where('email','=',$email)->get();
+        if(count($user) > 1){
             return response()->json(['data'=>'Email đã tồn tại, chọn lại']);
         }else{
             return response()->json(['data'=>' ']);

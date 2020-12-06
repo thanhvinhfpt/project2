@@ -9,39 +9,9 @@
                     <span class="sr-only">Toggle navigation</span>
                 </button>
                 <!-- Search -->
-                <div class="search" style="width:700px; margin-top: 20px;">
-                    <form action="">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {{--                                    <select  class="form-control" id="clinicSearch" name="clinicSearch" >--}}
-                                        {{--                                        <option value="">Choose Clinic</option>--}}
-                                        {{--                                        @foreach($lsClinic as $clinic)--}}
-                                        {{--                                            <option value="{{$clinic->id}}" {{$clinic->id == $clinic_id ? 'selected' : ''}} >{{$clinic->name}}</option>--}}
-                                        {{--                                        @endforeach--}}
-                                        {{--                                    </select>--}}
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group ">
-                                        <input type="text" class="form-control" placeholder="Enter Post's Name"
-                                               name="nameSearch" id="nameSearch" value="">
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group ">
-                                        <input type="submit" class="btn btn-primary" value="Tìm kiếm"/>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
+                
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 115px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 800px;">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -97,34 +67,46 @@
 
 
         <!-- Data Table -->
-
-        <div class="container">
+        <div class="col-md-10">
+            <div class="row">
+            <div class="container" style="margin-left:200px">
             <form action="{{route('post.store')}}" style="margin-top: 50px" method="post" enctype="multipart/form-data">
                 @csrf
-
-                <label for="title"><b>Enter Title</b></label>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Title" id="title" name="title">
-                </div>
-
-
-                <label for="author"><b>Enter Author</b></label>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Author" id="author" name="author">
-                </div>
-
                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="tag">Select Tag : </label>
-                        <select name="tag" id="tag">
-                            @foreach($lsTag as $tag)
-                                <option value="{{$tag->id}}">{{$tag->name}}</option>
-                            @endforeach
-                        </select>
+                    <div class="col-md-6">
+                        <div class="form-group">   
+                            <label for="title"><b>Enter Title</b></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Title" id="title" name="title">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group col-md-6" style="margin-right: 0">
-                        <label for="createdAt">Ngày đăng :</label>
-                        <input type="date" name="createdAt" id="createdAt">
+                    <div class="col-md-6">
+                        <div class="form-group">   
+                            <label for="author"><b>Enter Author</b></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Author" id="author" name="author">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">   
+                            <label for="tag">Select Tag : </label>
+                            <select name="tag" id="tag" class="form-control">
+                                @foreach($lsTag as $tag)
+                                    <option  value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">   
+                            <label for="createdAt">Ngày đăng :</label>
+                            <input class="form-control" type="date" name="createdAt" id="createdAt">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -141,19 +123,24 @@
                         <img src="" alt="" style="width:100px;" id="imageInsert">
                     </div>
                 </div>
-                <label for="ckeditor">Content : </label>
+                
                 <div class="row">
+                <div class="col-md-12">
                     <div class=" form-group">
-                        <textarea class="ckeditor" rows="5" cols="500" required name="body"></textarea>
+                        <label for="ckeditor">Content : </label>
+                        <textarea class="ckeditor" rows="5" cols="600" required name="body"></textarea>
                     </div>
                 </div>
-                <div class="container" style="height: 50px"></div>
-                    <input type="submit" value="Create new Post">
-        </form>
-            <div class="container" style="height: 50px">
+                    
+                </div>
+                
+                <input type="submit" class="  btn btn-primary"value="Create new Post">
             </div>
         </div>
-        {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>--}}
+        </form>
+            
+        </div>
+       
         <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

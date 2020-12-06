@@ -24,9 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role_name == 'ADMIN'){
-            return view('dashboard.dashboard');
+            return redirect('dashboards');
         }else{
-            return view('employee.schedule');
+
+            return redirect('employees');
         }
     }
 }

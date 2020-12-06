@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-    <section class="col-md-8" style="margin:5px auto; background-color:#2b7f4b">
+    <section class="col-md-8" style="margin:5px 0; background-color:#2b7f4b">
         <div class="modal-body">
             <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
                 @csrf
@@ -105,7 +105,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng <span style="color:tomato;">*</span></label>
-                            <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng"></textarea>
+                            <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng" rows="7"></textarea>
                             <span id="message_code"></span>
                         </div>
                     </div>

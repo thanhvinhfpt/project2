@@ -45,10 +45,8 @@ class ScheduleController extends Controller
         }else if($clinic_id == null && $doctor_id != null && $identity == null && $date == null){
             $lsSchedule = ExaminationSchedule::where('doctor_id',"=",  $doctor_id)->where('status',"=", "Pendding")->paginate(6);
         }
-
         $lsDoctor = Doctor::all();
         $lsClinic = Clinic::all();
-
         return view('schedules.schedule')->with(['lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor, 'lsSchedule'=>$lsSchedule, 'clinic_id'=>$clinic_id,'doctor_id'=>$doctor_id, 'date'=>$date]);
     }
 
