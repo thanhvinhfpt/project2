@@ -67,7 +67,7 @@
                         href="{{route('homefrontEnd')}}"
                         title="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                         <img
-                            src="{{asset('assets/img/header/header_hospital_01.jpg')}}"
+                            src="{{asset('upload/sec12_1 (1).png')}}"
                             alt="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                     </a>
                 </div>
@@ -380,7 +380,7 @@
                             <div class="owl-item" style="width: 149.667px; margin-right: 5px;">
                                 <div class="item sec15_col">
                                     <span>
-                                        <a class="modal__open" data-modal-button="modal_2">
+                                        <a class="modal__open" data-modal-button="modal_2" href="{{route('bookSchedule')}}">
                                             <img class="owl-lazy"
                                                  src="{{ URL::asset('imgs/sec15_4.jpg') }}"
                                                  alt="{{ trans('book-schedule.MENU.'.'ĐẶT HẸN KHÁM BỆNH') }}"
