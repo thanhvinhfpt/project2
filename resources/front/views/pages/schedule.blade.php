@@ -2,9 +2,9 @@
 @section('content')
     <div class="col-md-8">
         <div class="row">
-            <section class="col-md-12" style="margin:5px 0; background-color:#2b7f4b; height:780px">
+            <section class="col-md-12" style="margin:5px 0; background-color:#2b7f4b; height:800px">
                 <div class="modal-body">
-                    <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
+                    <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="formBookSchedule" name="ScheduleForm">
                         @csrf
                         <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
                         <div class="row">
@@ -106,15 +106,16 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng <span style="color:tomato;">*</span></label>
-                                    <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng" rows="7"></textarea>
-                                    <span id="message_code"></span>
+                                    <textarea type="text" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng" rows="7"></textarea>
+                                    <span id="message_symptom"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input type="text" hidden class="form-control" id="status" name="status" value="pendding">
+                               
                             </div>
                         </div>
-                        <span id="message" style="color:tomato"></span>
+                        <span id="message" style="color:yellow"></span>
                         <div class="modal-footer" style="border:none;">
                             <!-- <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button> -->
                             <button type="submit" class="btn btn-success btn-pill" onclick="return validateBookSchedule()">Đặt lịch</button>
@@ -147,6 +148,8 @@
     
 
     <!-- reload doctor-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+
     <script type="text/javascript">
         $('select#clinic').change(function() {
             $('select#doctor').children().remove();
@@ -194,8 +197,37 @@
             });
         });
     </script>
+<!-- Validate form -->
+<script>
+    $("#formBookSchedule").validate({
+        rules: {
+            name: "required",
+            phone: "required",
+            identity: "required",
+            email: "required",
+            clinic: "required",
+            doctor: "required",
+            date: "required",
+            time: "required",
+           symptom: "required"
+       
+        },
+        messages: {
+            name: "Vui lòng nhập tên",
+            phone: "Vui lòng nhập số điện thoại",
+            identity: "Vui lòng nhập số CMND",
+            email: "Vui lòng điền email",
+            clinic: "Vui lòng chọn khoa",
+            doctor: "Vui lòng chọn bác sĩ",
+            date: "Vui lòng chọn ngày khám",
+            time: "Vui lòng chọn thời gian khám",
+            symptom: "Vui lòng điền triệu chứng"
+        
+        },
+    });
 
-    <script>
+</script>
+<script>
         window.onload = function(){
             var d = new Date();
             var newdate = new Date(d);
@@ -218,81 +250,16 @@
             }
         }
     </script>
-    <script>
-        function validateBookSchedule(){
-            var name = document.ScheduleForm.name;
-            var identity = document.ScheduleForm.identity;
-            var ph = /^[0-9]+$/;
-            var email = document.ScheduleForm.email;
-            var phone = document.ScheduleForm.phone;
-            var clinic = document.ScheduleForm.clinic;
-            var doctor = document.ScheduleForm.doctor;
-            var date = document.ScheduleForm.date;
-            var time = document.ScheduleForm.time;
-            var symptom = document.ScheduleForm.symptom;
-            if (name.value == "") {
-                window.alert("Vui lòng nhập họ tên đầy đủ.");
-                name.focus();
-                return false;
-            }
-            if (identity.value == "") {
-                window.alert("Vui lòng nhập số chứng minh nhân dân.");
-                identity.focus();
-                return false;
-            }
-            if (phone.value == "") {
-                window.alert("Vui lòng nhập số điện thoại.");
-                phone.focus();
-                return false;
-            }
-            if (!ph.test(phone.value)) {
-                window.alert("Vui lòng nhập số điện thoại kiểu số");
-                phone.focus();
-                return false;
-            }
-            if (email.value == "") {
-                window.alert("Vui lòng nhập Email đầy đủ.");
-                email.focus();
-                return false;
-            }
-            if (email.value.indexOf("@", 0) < 0) {
-                window.alert("Vui lòng nhập Email chính xác.");
-                email.focus();
-                return false;
-            }
-            if (email.value.indexOf(".", 0) < 0) {
-                window.alert("Vui lòng nhập Email chính xác.");
-                email.focus();
-                return false;
-            }
-            if (doctor.value == "") {
-                window.alert("Vui lòng chọn bác sĩ mà bạn muốn đặt lịch.");
-                doctor.focus();
-                return false;
-            }
-            if (clinic.value == "") {
-                window.alert("Vui lòng chọn chuyên khoa mà bạn muốn đặt lịch.");
-                clinic.focus();
-                return false;
-            }
-            if (time.value == "") {
-                window.alert("Vui lòng chọn giờ khám mà bạn muốn đặt lịch.");
-                time.focus();
-                return false;
-            }
-            if (date.value == "") {
-                window.alert("Vui lòng chọn ngày khám mà bạn muốn đặt lịch.");
-                date.focus();
-                return false;
-            }
-            if (symptom.value == "") {
-                window.alert("Vui lòng Mô tả triệu chứng bạn cần tư vấn.");
-                symptom.focus();
-                return false;
-            }
+<script>
+    function validateBookSchedule(){
+        var message_ajax = $('#message').text();
+        if(message_ajax != ""){
+            return false;
+        }else if(message_ajax == ""){
             return true;
         }
-    </script>
+        
+    }
 
-
+</script>
 @endsection

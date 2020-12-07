@@ -42,8 +42,6 @@
         text-decoration: none!important;
     }
     </style>
-    
-
 </head>
 <body>
     @include('partial.Header')
