@@ -86,7 +86,7 @@
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.Giới thiệu') }}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="{{route('lsPost','Đội Ngũ Bác Sĩ')}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
+                                <li class="menu-item"><a href="{{route('lsPost',21)}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach

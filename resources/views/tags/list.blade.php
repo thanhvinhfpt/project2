@@ -13,16 +13,7 @@
                     <form action="">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {{--                                    <select  class="form-control" id="clinicSearch" name="clinicSearch" >--}}
-                                        {{--                                        <option value="">Choose Clinic</option>--}}
-                                        {{--                                        @foreach($lsClinic as $clinic)--}}
-                                        {{--                                            <option value="{{$clinic->id}}" {{$clinic->id == $clinic_id ? 'selected' : ''}} >{{$clinic->name}}</option>--}}
-                                        {{--                                        @endforeach--}}
-                                        {{--                                    </select>--}}
-                                    </div>
-                                </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group ">
                                         <input type="text" class="form-control" placeholder="Enter Tag's Name"
@@ -41,7 +32,7 @@
                     </form>
                 </div>
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 115px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 430px;">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -98,7 +89,7 @@
 
         <!-- Data Table -->
         <span><a href="{{route('tag.create')}}" class="btn btn-primary"
-                 style="float: right;  margin: 30px 16px 20px 0 ;color: white">Add New tag</a></span>
+                 style="float: right;  margin: 30px 82px 20px 0 ;color: white">Add New tag</a></span>
         <div class="container">
 
             <table class="table table-bordered table-hover">

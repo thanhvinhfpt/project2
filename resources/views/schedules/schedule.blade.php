@@ -115,7 +115,7 @@
                     <table class="table table-bordered table-hover">
                       <thead>
                         <tr>
-                
+
                           <th  class="header_table" style="width:15%">Name</th>
                           <th  class="header_table" style="width:15%">CMND</th>
                           <th  class="header_table" style="width:15%">Docter</th>
@@ -199,11 +199,15 @@
                           <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
                           <span class="message" style="color:tomato"></span>
                         </div>
-                        
-                        m ''
+
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary btn-pill" onclick="return validate()">Save </button>
+                          </div>
+                          
                       </form>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -246,14 +250,14 @@
                                 <option value="04:30 - 05:00 PM">04:30 - 05:00 PM</option>
                                 </select>
                                 <input  id="idEdit" name="idEdit" hidden>
-                                
+
                               </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label for="identity">Date</label>
                                   <input type="date" min="" name="dateEdit" id="dateEdit" class="form-control" placeholder="End Date" />
-                              
+
                                 </div>
                               </div>
                         </div>
@@ -263,9 +267,9 @@
                             <label for="clinic">Doctor</label>
                             <select  class="form-control" id="doctorEdit" name="doctorEdit">
                             <option value="">Choose Doctor</option>
-                                
+
                             </select>
-                          
+
                             </div>
                           </div>
                         </div>
@@ -276,7 +280,7 @@
                         </div>
                       </form>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -330,7 +334,7 @@
         url: "../../api/passDate",
         data : data,
         success: function(response){
-          
+
         },
     });
     });
@@ -339,14 +343,14 @@
 <!-- Data modal to make history -->
 <script type="text/javascript">
   $('#historyModalForm').on('show.bs.modal', function (event) {
-      
+
       var button = $(event.relatedTarget)
       var name = button.data('name')
       var id = button.data('id')
       var identity = button.data('identity')
       var phone = button.data('phone')
       var doctor = button.data('doctor')
-     
+
       var modal = $(this)
 
       modal.find('.modal-body #name').val(name)
@@ -383,7 +387,7 @@
       modal.find('.modal-body #dateEdit').val(date)
 
       $('select#doctorEdit').children().remove();
-      $('select#doctorEdit').append(new Option("Select Doctor", ""));  
+      $('select#doctorEdit').append(new Option("Select Doctor", ""));
       var data = {"clinicID": clinicID}
       $.ajax({
           type: "POST",
@@ -424,7 +428,7 @@
   message.oninput = function(){
     $('.message').html("");
   };
-  
+
 </script>
 
 
@@ -437,7 +441,7 @@
       return true;
     }
   }
-  
+
 </script>
 
 <!-- check new schudule when edit-->
@@ -465,7 +469,7 @@
           data : data,
           success: function(response){
             $('#message').html(response.data);
-            
+
             },
           });
         }else{
@@ -475,12 +479,12 @@
           data : data,
           success: function(response){
             $('#message').html(response.data);
-            
+
             },
           });
         }
     });
-    }); 
+    });
     $('#close, #star').click(function(){
       $('#message').html("");
     })
@@ -492,16 +496,16 @@
     window.onload = function(){
     var d = new Date();
     // Build ISO 8601 format date string
-    var s = d.getFullYear() + '-' + 
+    var s = d.getFullYear() + '-' +
             ('0' + (d.getMonth()+1)).slice(-2) + '-' +
             ('0' + d.getDate()).slice(-2);
-    
+
     // Set the value of the value and min attributes
     var node = document.querySelector('input#dateEdit');
     if (node) {
     node.setAttribute('min', s);
     node.setAttribute('value', s);
-    
+
     }
 }
 </script>

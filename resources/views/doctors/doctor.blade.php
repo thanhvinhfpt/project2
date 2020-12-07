@@ -40,7 +40,7 @@
                             </form>
                           </div>
                           <!-- End search -->
-                          <div class="navbar-right" style="padding: 0; margin-left: 115px;" >
+                          <div class="navbar-right" style="padding: 0; margin-left: 430px;" >
                             <ul class="nav navbar-nav">
 
                               <li class="dropdown user-menu" >
@@ -94,7 +94,7 @@
 
 
                       <!-- Data Table -->
-                      <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 16px 20px 0 ;">Add New Doctor</button></span>
+                      <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 78px 20px 2px ;">Add New Doctor</button></span>
                       <div class="container">
 
                         <table class="table table-bordered table-hover">

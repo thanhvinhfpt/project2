@@ -78,7 +78,7 @@
 
                   <!-- table data -->
 
-                  <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 16px 20px 0 ;">Add New User</button></span>
+                  <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 80px 20px 0 ;">Add New User</button></span>
                   <div class="container">
 
                     <table class="table table-bordered table-hover">
@@ -138,7 +138,7 @@
                             <div class="form-group">
                               <label for="emailEdit">Email</label>
                               <input type="text" class="form-control" id="emailEdit" aria-describedby="emailHelp" name="emailEdit" >
-                              <span id="message_email_edit" style="color:tomato"></span>                         
+                              <span id="message_email_edit" style="color:tomato"></span>
                             </div>
                           </div>
                         </div>
@@ -156,7 +156,7 @@
                               </div>
                             </div>
                         </div>
-                        
+
                         <div class="modal-footer">
                           <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-primary btn-pill">Save Changes</button>
@@ -164,7 +164,7 @@
 
                       </form>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@
                               <span class="usernameInsert"></span>
                             </div>
                           </div>
-                          
+
                         </div>
                         <div class="row">
                           <div class="col-md-6">
@@ -233,7 +233,7 @@
 
                       </form>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -261,7 +261,7 @@
 
                         </div>
                     </div>
-                    
+
                   </div>
                 </div>
               </div>
@@ -349,12 +349,12 @@
 </script> -->
 
 <script>
-  
+
 </script>
 
 <script>
   $("#insertUserForm").validate({
-	
+
   rules: {
     usernameInsert: "required",
     doctorCodeInsert: "required",
@@ -364,7 +364,7 @@
       equalTo: "#passwordInsert",
       required: "true"
     },
-    
+
   },
 
   messages: {
@@ -374,27 +374,27 @@
     "confirm_passwordInsert": {
       required: "Vui lòng nhập lại mật khẩu",
       equalTo: "Hai mật khẩu phải giống nhau"
-     
+
       },
     emailInsert: "Vui lòng nhập email. </br>",
-  
+
   },
   submitHandler: function(form) {
-    
+
     form.submit();
   }
 });
 $("#editUserForm").validate({
-	
+
   rules: {
     usernameEdit: "required",
     passwordEdit: "required",
     emailEdit: "required",
     "confirm_passwordEdit": {
       equalTo: "#passwordEdit",
-      
+
     },
-    
+
   },
 
   messages: {
@@ -402,13 +402,13 @@ $("#editUserForm").validate({
     passwordEdit: "Vui lòng nhập mật khẩu. </br>",
     "confirm_passwordEdit": {
       equalTo: "Hai mật khẩu phải giống nhau"
-     
+
       },
     emailEdit: "Vui lòng nhập email. </br>",
-  
+
   },
   submitHandler: function(form) {
-    
+
     form.submit();
   }
 });
@@ -431,7 +431,7 @@ $("#editUserForm").validate({
       modal.find('.modal-body #passwordEdit').val(password)
       modal.find('.modal-body #confirm_passwordEdit').val(password)
 
-      
+
       $('#emailEdit').keyup(function(){
         var email =  $(this).val();
         var data = {"email": email}

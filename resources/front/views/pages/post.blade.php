@@ -1,7 +1,7 @@
 @extends('layouts.postMaster')
 @section('content')
 
-<section class="container12 sec17" style="margin: 0 30px 0 0;">
+<section class="container12 sec17" id="detailPost" style="margin: 0 30px 0 0;">
         <div>
             <p style="color: #2a7f49"><u>Trang chủ >>  @foreach($lsTag as $tag)
                         @if($tag->id == $post->tag_id)

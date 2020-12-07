@@ -8,9 +8,9 @@
                 <button id="sidebar-toggler" class="sidebar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                 </button>
-               
+
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 115px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 1000px">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -89,7 +89,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
 
                         <div class="row">
                             <div class="col-md-6">
@@ -113,8 +113,8 @@
                                     <input class="form-control" type="date" name="updatedAt" id="updatedAt" value="{{$post->updated_at}}">
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -144,7 +144,7 @@
                         </div>
 
                     </form>
-                   
+
                 </div>
             </div>
         </div>

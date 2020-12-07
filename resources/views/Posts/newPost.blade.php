@@ -9,9 +9,9 @@
                     <span class="sr-only">Toggle navigation</span>
                 </button>
                 <!-- Search -->
-                
+
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 800px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 1000px;">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -74,7 +74,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">   
+                        <div class="form-group">
                             <label for="title"><b>Enter Title</b></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Title" id="title" name="title">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">   
+                        <div class="form-group">
                             <label for="author"><b>Enter Author</b></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Author" id="author" name="author">
@@ -93,7 +93,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">   
+                        <div class="form-group">
                             <label for="tag">Select Tag : </label>
                             <select name="tag" id="tag" class="form-control">
                                 @foreach($lsTag as $tag)
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group">   
+                        <div class="form-group">
                             <label for="createdAt">Ngày đăng :</label>
                             <input class="form-control" type="date" name="createdAt" id="createdAt">
                         </div>
@@ -123,7 +123,7 @@
                         <img src="" alt="" style="width:100px;" id="imageInsert">
                     </div>
                 </div>
-                
+
                 <div class="row">
                 <div class="col-md-12">
                     <div class=" form-group">
@@ -131,16 +131,16 @@
                         <textarea class="ckeditor" rows="5" cols="600" required name="body"></textarea>
                     </div>
                 </div>
-                    
+
                 </div>
-                
+
                 <input type="submit" class="  btn btn-primary"value="Create new Post">
             </div>
         </div>
         </form>
-            
+
         </div>
-       
+
         <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

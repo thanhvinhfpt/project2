@@ -41,7 +41,7 @@
                     </form>
                 </div>
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 115px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 430px;">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -98,7 +98,7 @@
 
         <!-- Data Table -->
         <span><a href="{{route('post.create')}}" class="btn btn-primary"
-                 style="float: right;  margin: 30px 16px 20px 0 ;color: white">Add New Post</a></span>
+                 style="float: right;  margin: 30px 80px 20px 0 ;color: white">Add New Post</a></span>
         <div class="container">
 
             <table class="table table-bordered table-hover">

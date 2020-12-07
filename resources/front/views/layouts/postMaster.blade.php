@@ -5,6 +5,12 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1">
     <meta name="description" content="{{trans(('book-schedule.META_CONTENT'))}}">
     <link rel="icon" href="{{asset('upload/tải xuống.png')}}" type="image/x-icon">
+    <style>
+        #detailPost p img{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
 
     <!-- CSRF Token -->
     {{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
