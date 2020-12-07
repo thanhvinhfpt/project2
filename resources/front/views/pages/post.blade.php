@@ -4,7 +4,7 @@
 <section class="container12 sec17" style="margin: 0 30px 0 0;">
         <div>
             <p style="color: #2a7f49"><u>Trang chủ >>  @foreach($lsTag as $tag)
-                        @if($tag->id == $post->tagId)
+                        @if($tag->id == $post->tag_id)
                             {{$tag->name}}
                         @endif
                     @endforeach>>{{$post->title}}</u></p>
