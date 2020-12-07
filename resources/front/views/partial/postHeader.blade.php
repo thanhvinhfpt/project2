@@ -12,7 +12,7 @@
                         <a href="tel:{{SiteHelper::$phone_contact}}">{{SiteHelper::$phone_contact}} </a>
                     </span>
                     <span class="sp1">
-                         <strong>Ngôn ngữ :</strong>
+                         <strong>{{ trans('book-schedule.MENU.'.'Ngôn ngữ') }}:</strong>
                         <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
                         <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
@@ -63,11 +63,10 @@
             <div class="d_flex">
                 <div class="sec12_col1">
                     <a
-                        href="{{route('homefrontEnd')}}
-                            "
+                        href="{{route('homefrontEnd')}}"
                         title="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                         <img
-                            src="{{asset('assets/img/header/header_hospital_01.jpg')}}"
+                            src="{{asset('upload/sec12_1 (1).png')}}"
                             alt="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                     </a>
                 </div>
