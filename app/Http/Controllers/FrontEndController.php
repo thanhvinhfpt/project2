@@ -84,15 +84,15 @@ class FrontEndController extends Controller
         return view('pages.post')->with(['Hotrokhachhang' => $Hotrokhachhang, 'gioithieukhoa' => $gioithieukhoa, 'gioithieuchung' => $gioithieuchung, 'dichvuyte' => $dichvuyte, 'post' => $post, 'lsTag' => $lsTag]);
     }
 
-    public function showListPost($tagName)
+    public function showListPost($id)
     {
-        $tag = Tag::find(21);
-        $lsPost = $tag->post();
+        $tag = Tag::find($id);
+        $lsPost = Post::where('tag_id','=',$id)->paginate(8);
         $gioithieukhoa = Post::all()->where('tag_id', '=', '4');
         $gioithieuchung = Post::all()->where('tag_id', '=', '10');
         $dichvuyte = Post::all()->where('tag_id', '=', '15');
         $Hotrokhachhang = Post::all()->where('tag_id', '=', '16');
-        return view('pages.doctors')->with(['Hotrokhachhang' => $Hotrokhachhang, 'gioithieukhoa' => $gioithieukhoa, 'gioithieuchung' => $gioithieuchung, 'dichvuyte' => $dichvuyte, 'lsPost' => $lsPost, 'tag' => $tag]);
+        return view('pages.lsPost')->with(['Hotrokhachhang' => $Hotrokhachhang, 'gioithieukhoa' => $gioithieukhoa, 'gioithieuchung' => $gioithieuchung, 'dichvuyte' => $dichvuyte, 'lsPost' => $lsPost, 'tag' => $tag]);
     }
 
 //    public function showListDoctor()

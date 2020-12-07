@@ -2,6 +2,7 @@
 @section('content')
 
     <section class="col-md-8" style="margin:5px 0; background-color:#2b7f4b">
+
         <div class="modal-body">
             <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
                 @csrf
