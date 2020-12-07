@@ -16,18 +16,16 @@ class EmployeeController extends Controller
     public function index(Request $request)
     {
         $doctor_code = Auth::user()->doctor_code;
-        $doctor_id = Doctor::where('code','=', $doctor_code)->get();
+        $doctor_id = Doctor::where('code','=', $doctor_code)->value('id');
         $now = date('Y-m-j');
         $date = $request->date;
         
-        if($date == null){
-            $date = $now;
-           
-        }
-    
+       
         $identity = $request->identity;
+     
         if( $date == null && $identity == null ){
-            $lsSchedule = ExaminationSchedule::where('doctor_id','=',$doctor_id)->where('date',"=", $now)->where('status','=','Pendding')->paginate(8);
+            $lsSchedule = ExaminationSchedule::where('doctor_id','=',"28")->where('date',"=", $now)->where('status','=','Pendding')->paginate(8);
+            
         }else if($date != null && $identity == null ){
             $lsSchedule = ExaminationSchedule::where('doctor_id','=',$doctor_id)->where('date',"=", $date)->where('status','=','Pendding')->paginate(8);
         }else if($date == null && $identity != null ){

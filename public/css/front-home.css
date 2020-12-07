@@ -599,3 +599,6 @@ a {
         display: block!important;
     }
 }
+.pagination{
+    display:flex;
+}

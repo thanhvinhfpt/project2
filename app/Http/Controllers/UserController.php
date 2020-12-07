@@ -17,9 +17,9 @@ class UserController extends Controller
     {
         $name = $request->nameSearch;
         if($name != null){
-            $lsUser = User::where('name','=',$name)->paginate(10);
+            $lsUser = User::where('name','=',$name)->where('role_name','=','EMPLOYEE')->paginate(10);
         }else {
-            $lsUser = User::paginate(10);
+            $lsUser = User::where('role_name','=','EMPLOYEE')->paginate(10);
         }
         return view('users.user')->with(['lsUser'=> $lsUser, 'name'=>$name]);
     }

@@ -1,129 +1,150 @@
 @extends('layouts.master')
 @section('content')
+    <div class="col-md-8">
+        <div class="row">
+            <section class="col-md-12" style="margin:5px 0; background-color:#2b7f4b; height:780px">
+                <div class="modal-body">
+                    <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
+                        @csrf
+                        <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
+                        <div class="row">
 
-    <section class="col-md-8" style="margin:5px 0; background-color:#2b7f4b">
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <label for="name" style="padding: 5px; text-transform:uppercase; color:#fff;">Họ và tên <span style="color:tomato;">*</span></label>
+                                    <input type="text" class="form-control" id="name"  name="name" placeholder="Nhập họ tên" >
+                                    <span id="message_code"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="identity" style="padding: 5px; text-transform:uppercase; color:#fff;">cmnd <span style="color:tomato;">*</span></label>
+                                    <input type="number" class="form-control" id="identity"  name="identity" placeholder="Nhập CMND" >
+                                    <span id="message_code"></span>
+                                </div>
+                            </div>
 
-        <div class="modal-body">
-            <form action="{{route('bookScheduleStore')}}" method="post" enctype="multipart/form-data" id="new_doctor" name="ScheduleForm">
-                @csrf
-                <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Thông tin khách hàng</h4>
-                <div class="row">
-
-                    <div class="col-lg-8">
-                        <div class="form-group">
-                            <label for="name" style="padding: 5px; text-transform:uppercase; color:#fff;">Họ và tên <span style="color:tomato;">*</span></label>
-                            <input type="text" class="form-control" id="name"  name="name" placeholder="Nhập họ tên" >
-                            <span id="message_code"></span>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="identity" style="padding: 5px; text-transform:uppercase; color:#fff;">cmnd <span style="color:tomato;">*</span></label>
-                            <input type="number" class="form-control" id="identity"  name="identity" placeholder="Nhập CMND" >
-                            <span id="message_code"></span>
-                        </div>
-                    </div>
+                        <div class="row" >
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" style="padding: 5px; text-transform:uppercase; color:#fff;">Địa chỉ Email <span style="color:tomato;">*</span></label>
+                                    <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email">
+                                    <span id="message_name"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" style="padding: 5px; text-transform:uppercase; color:#fff;">Số điện thoại <span style="color:tomato;">*</span></label>
+                                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại" >
+                                    <span id="message_phone"></span>
+                                </div>
 
+                            </div>
+                        </div>
+                        <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Lịch hẹn</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="clinic" style="padding: 5px; text-transform:uppercase; color:#fff;">Chuyên khoa <span style="color:tomato;">*</span></label>
+                                    <select  class="form-control" id="clinic" name="clinic" >
+                                        <option value="">Chọn Chuyên Khoa</option>
+                                        @foreach($lsClinic as $clinic)
+                                            <option value="{{$clinic->id}}" >{{$clinic->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <span id="message_clinic"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="doctor" style="padding: 5px; text-transform:uppercase; color:#fff;">Bác Sĩ <span style="color:tomato;">*</span></label>
+                                    <select  class="form-control" id="doctor" name="doctor">
+                                        <option value="">Chọn Bác Sĩ</option>
+
+                                    </select>
+                                    <span id="message_clinic"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group ">
+                                    <label for="time" style="padding: 5px; text-transform:uppercase; color:#fff;">Giờ Khám <span style="color:tomato;">*</span></label>
+                                    <select  class="form-control" id="time" name="time">
+                                        <option value="">Chọn Ngày Giờ</option>
+                                        <option value="07:00 - 07:30 AM">07:00 - 07:30 AM</option>
+                                        <option value="07:30 - 08:00 AM">07:30 - 08:00 AM</option>
+                                        <option value="08:00 - 08:30 AM">08:00 - 08:30 AM</option>
+                                        <option value="08:30 - 09:00 AM">08:30 - 09:00 AM</option>
+                                        <option value="09:00 - 09:30 AM">09:00 - 09:30 AM</option>
+                                        <option value="09:30 - 10:00 AM">09:30 - 10:00 AM</option>
+                                        <option value="10:00 - 10:30 AM">10:00 - 10:30 AM</option>
+                                        <option value="10:30 - 11:00 AM">10:30 - 11:00 AM</option>
+                                        <option value="11:00 - 11:30 AM">11:00 - 11:30 AM</option>
+                                        <option value="01:00 - 01:30 PM">01:00 - 01:30 PM</option>
+                                        <option value="01:30 - 02:00 PM">01:30 - 02:00 PM</option>
+                                        <option value="02:00 - 02:30 PM">02:00 - 02:30 PM</option>
+                                        <option value="02:30 - 03:00 PM">02:30 - 03:00 PM</option>
+                                        <option value="03:00 - 03:30 PM">03:00 - 03:30 PM</option>
+                                        <option value="03:30 - 04:00 PM">03:30 - 04:00 PM</option>
+                                        <option value="04:00 - 04:30 PM">04:00 - 04:30 PM</option>
+                                        <option value="04:30 - 05:00 PM">04:30 - 05:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group ">
+                                    <label for="date" style="padding: 5px; text-transform:uppercase; color:#fff;">Ngày khám <span style="color:tomato;">*</span></label>
+                                    <input type="date" min= "" max= "" name="date" id="date" class="form-control" placeholder="End Date" />
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng <span style="color:tomato;">*</span></label>
+                                    <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng" rows="7"></textarea>
+                                    <span id="message_code"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" hidden class="form-control" id="status" name="status" value="pendding">
+                            </div>
+                        </div>
+                        <span id="message" style="color:tomato"></span>
+                        <div class="modal-footer" style="border:none;">
+                            <!-- <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button> -->
+                            <button type="submit" class="btn btn-success btn-pill" onclick="return validateBookSchedule()">Đặt lịch</button>
+                        </div>
+                        <span id="form-noti"></span>
+                    </form>
                 </div>
-                <div class="row" >
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="email" style="padding: 5px; text-transform:uppercase; color:#fff;">Địa chỉ Email <span style="color:tomato;">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email">
-                            <span id="message_name"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="phone" style="padding: 5px; text-transform:uppercase; color:#fff;">Số điện thoại <span style="color:tomato;">*</span></label>
-                            <input type="number" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại" >
-                            <span id="message_phone"></span>
-                        </div>
-
-                    </div>
-                </div>
-                <h4 style="text-transform:uppercase; color:#fff; font-size: 30px;">Lịch hẹn</h4>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="clinic" style="padding: 5px; text-transform:uppercase; color:#fff;">Chuyên khoa <span style="color:tomato;">*</span></label>
-                            <select  class="form-control" id="clinic" name="clinic" >
-                                <option value="">Chọn Chuyên Khoa</option>
-                                @foreach($lsClinic as $clinic)
-                                    <option value="{{$clinic->id}}" >{{$clinic->name}}</option>
-                                @endforeach
-                            </select>
-                            <span id="message_clinic"></span>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="doctor" style="padding: 5px; text-transform:uppercase; color:#fff;">Bác Sĩ <span style="color:tomato;">*</span></label>
-                            <select  class="form-control" id="doctor" name="doctor">
-                                <option value="">Chọn Bác Sĩ</option>
-
-                            </select>
-                            <span id="message_clinic"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group ">
-                            <label for="time" style="padding: 5px; text-transform:uppercase; color:#fff;">Giờ Khám <span style="color:tomato;">*</span></label>
-                            <select  class="form-control" id="time" name="time">
-                                <option value="">Chọn Ngày Giờ</option>
-                                <option value="07:00 - 07:30 AM">07:00 - 07:30 AM</option>
-                                <option value="07:30 - 08:00 AM">07:30 - 08:00 AM</option>
-                                <option value="08:00 - 08:30 AM">08:00 - 08:30 AM</option>
-                                <option value="08:30 - 09:00 AM">08:30 - 09:00 AM</option>
-                                <option value="09:00 - 09:30 AM">09:00 - 09:30 AM</option>
-                                <option value="09:30 - 10:00 AM">09:30 - 10:00 AM</option>
-                                <option value="10:00 - 10:30 AM">10:00 - 10:30 AM</option>
-                                <option value="10:30 - 11:00 AM">10:30 - 11:00 AM</option>
-                                <option value="11:00 - 11:30 AM">11:00 - 11:30 AM</option>
-                                <option value="01:00 - 01:30 PM">01:00 - 01:30 PM</option>
-                                <option value="01:30 - 02:00 PM">01:30 - 02:00 PM</option>
-                                <option value="02:00 - 02:30 PM">02:00 - 02:30 PM</option>
-                                <option value="02:30 - 03:00 PM">02:30 - 03:00 PM</option>
-                                <option value="03:00 - 03:30 PM">03:00 - 03:30 PM</option>
-                                <option value="03:30 - 04:00 PM">03:30 - 04:00 PM</option>
-                                <option value="04:00 - 04:30 PM">04:00 - 04:30 PM</option>
-                                <option value="04:30 - 05:00 PM">04:30 - 05:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group ">
-                            <label for="date" style="padding: 5px; text-transform:uppercase; color:#fff;">Ngày khám <span style="color:tomato;">*</span></label>
-                            <input type="date" min= "" max= "" name="date" id="date" class="form-control" placeholder="End Date" />
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="symptom" style="padding: 5px; text-transform:uppercase; color:#fff;">Triệu chứng <span style="color:tomato;">*</span></label>
-                            <textarea type="number" class="form-control" id="symptom"  name="symptom" placeholder="Miêu tả triệu chứng" rows="7"></textarea>
-                            <span id="message_code"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" hidden class="form-control" id="status" name="status" value="pendding">
-                    </div>
-                </div>
-                <span id="message" style="color:tomato"></span>
-                <div class="modal-footer" style="border:none;">
-                    <!-- <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button> -->
-                    <button type="submit" class="btn btn-success btn-pill" onclick="return validateBookSchedule()">Đặt lịch</button>
-                </div>
-                <span id="form-noti"></span>
-            </form>
-        </div>
-    </section>
-
+            </section>
+            <h2 class="title_shadow_bvtc col-md-12" style="margin-top:50px" ><span>{{ trans('book-schedule.MENU.'.'TƯ VẤN TRỰC TUYẾN') }}</span></h2>
+            <div class="col-md-12">
+                <ul class="d_flex">
+                    <li>
+                        <a href="#">
+                            <img src="https://i1-suckhoe.vnecdn.net/2020/10/22/trung-tam-hy-vong-1603329226-5898-1603329690.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=RQdeHUALZmFGHVB-SrJCFQ" alt="Tư vấn trực tuyến">
+                            <h4 style="text-align:center;">{{ trans('book-schedule.MENU.'.'TƯ VẤN TRỰC TUYẾN') }}</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://i1-suckhoe.vnecdn.net/2020/12/01/h1-1606816314-3637-1606816802.jpg?w=300&h=180&q=100&dpr=1&fit=crop&s=OQp6nuI-IQo5ChIsHNl-QQ" alt="Tư vấn khám chữa bệnh">
+                            <h4 style="text-align:center;">{{ trans('book-schedule.MENU.'.'TƯ VẤN KHÁM CHỮA BÊNH') }}</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+    </div>
+    </div>
+   
+    
+    
 
     <!-- reload doctor-->
     <script type="text/javascript">

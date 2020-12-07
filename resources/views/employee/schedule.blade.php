@@ -137,7 +137,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form action="{{route('schedules.store')}}" method="post">
+                      <form action="{{route('history.store')}}" method="post">
                       @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -216,7 +216,26 @@
   };
   
 </script>
+<!-- Data modal to make history -->
+<script type="text/javascript">
+  $('#historyModalForm').on('show.bs.modal', function (event) {
+      
+      var button = $(event.relatedTarget)
+      var name = button.data('name')
+      var id = button.data('id')
+      var identity = button.data('identity')
+      var phone = button.data('phone')
+      var doctor = button.data('doctor')
+     
+      var modal = $(this)
 
+      modal.find('.modal-body #name').val(name)
+      modal.find('.modal-body #id').val(id)
+      modal.find('.modal-body #phone').val(phone)
+      modal.find('.modal-body #identity').val(identity)
+      modal.find('.modal-body #doctor').val(doctor)
+    });
+</script>
 @endsection
 
 

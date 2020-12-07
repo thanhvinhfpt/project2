@@ -70,8 +70,14 @@ class FrontEndSchedule extends Controller
         $schedule->doctor_id = $request->doctor;
         $schedule->symptom = $request->symptom;
         $schedule->status = "Pendding";
+        $doctor = Doctor::where('id','=',$request->doctor)->value('name');
+        $clinic = Clinic::where('id','=',$request->clinic)->value('name');
         $schedule->save();
-        return redirect('front/frontEndSchedule');
+        $gioithieukhoa = Post::all()->where('tag_id','=','4');
+        $gioithieuchung = Post::all()->where('tag_id','=','10');
+        $dichvuyte = Post::all()->where('tag_id','=','15');
+        $Hotrokhachhang = Post::all()->where('tag_id','=','16');
+        return view('pages.bookingSuccess')->with(['name'=>$request->name, 'email'=>$request->email, 'identity'=>$request->identity, 'phone'=>$request->phone, 'date'=>$request->date, 'time'=>$request->time,'doctor'=>$doctor,'clinic'=>$clinic,'gioithieukhoa'=>$gioithieukhoa, 'gioithieuchung'=>$gioithieuchung, 'dichvuyte'=>$dichvuyte, 'Hotrokhachhang'=>$Hotrokhachhang]);
     }
 
     /**
@@ -80,9 +86,9 @@ class FrontEndSchedule extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        
     }
 
     /**

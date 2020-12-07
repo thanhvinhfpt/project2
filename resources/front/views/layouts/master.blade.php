@@ -37,8 +37,12 @@
     <script src="{{URL::asset('js/main-home.js')}}"></script>
     <script src="{{URL::asset('js/main.js')}}"></script>
     <script src="{{ URL::asset('js/app.js') }}" defer></script>
-
-
+    <style>
+    a{
+        text-decoration: none!important;
+    }
+    </style>
+    
 
 </head>
 <body>

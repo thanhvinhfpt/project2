@@ -491,7 +491,9 @@
             $('#message_code').html("Vui lòng nhập mã nhân viên");
             $('#message_clinic').html("Vui lòng chọn khoa");
      				return false;
-     			}else{
+     			}else if(result !=""){
+            return false;
+           }else{
              return true;
            }
      		};

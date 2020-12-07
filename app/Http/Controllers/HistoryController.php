@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HistoryExamination;
+use App\Models\ExaminationSchedule;
 class HistoryController extends Controller
 {
     /**
@@ -34,7 +35,7 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -45,7 +46,17 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $history = new HistoryExamination();
+        $history->name = $request->name;
+        $history->CMND = $request->identity;
+        $history->phone = $request->phone;
+        $history->doctor = $request->doctor;
+        $history->diagnostic = $request->comment;
+        $history->save();
+        $schedule = ExaminationSchedule::find($request->id);
+        $schedule->status = "Success";
+        $schedule->save();
+        return redirect("employees");
     }
 
     /**

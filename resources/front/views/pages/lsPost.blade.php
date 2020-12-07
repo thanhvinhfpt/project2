@@ -38,20 +38,9 @@
                 @endforeach
 
             </ul>
-                `  <div  > {{$lsPost->links("pagination::bootstrap-4")}}</div>
+            
         </div>
-
-        {{--        <div class="pagination">--}}
-        {{--            <div class="">--}}
-        {{--                <div class="pagenavi">--}}
-        {{--                    <span aria-current="page" class="page-numbers current">1</span>--}}
-        {{--                    <a class="page-numbers" href="#/2">2</a>--}}
-        {{--                    <span class="page-numbers dots">…</span>--}}
-        {{--                    <a class="page-numbers" href="#/2">12</a>--}}
-        {{--                    <a class="next page-numbers" href="#/2">»</a>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
+        {{$lsPost->links("pagination::bootstrap-4")}}
     </div>
 
 @endsection
