@@ -18,9 +18,9 @@ class HistoryController extends Controller
         $identity = $request->searchIdentity;
         
         if($identity == null){
-            $lsHistory = HistoryExamination::all()->take(10);
+            $lsHistory = HistoryExamination::orderBy('created_at', 'desc')->paginate(10);
         }else{
-            $lsHistory = HistoryExamination::where('CMND','=',$identity)->get();
+            $lsHistory = HistoryExamination::where('CMND','=',$identity)->orderBy('created_at', 'desc')->get();
            
         }
        

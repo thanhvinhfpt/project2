@@ -95,6 +95,18 @@ class FrontEndController extends Controller
         return view('pages.lsPost')->with(['Hotrokhachhang' => $Hotrokhachhang, 'gioithieukhoa' => $gioithieukhoa, 'gioithieuchung' => $gioithieuchung, 'dichvuyte' => $dichvuyte, 'lsPost' => $lsPost, 'tag' => $tag]);
     }
 
+    public function search(Request $request){
+        $search = $request->s;
+        $lsPost = Post::where('title','like',"%".$search."%")->orWhere('body','like',"%".$search."%")->paginate(6);
+        $count = count(Post::where('title','like',"%".$search."%")->orWhere('body','like',"%".$search."%")->get());
+        $gioithieukhoa = Post::all()->where('tag_id', '=', '4');
+        $gioithieuchung = Post::all()->where('tag_id', '=', '10');
+        $dichvuyte = Post::all()->where('tag_id', '=', '15');
+        $Hotrokhachhang = Post::all()->where('tag_id', '=', '16');
+
+        return view('pages.searchResult')->with(['Hotrokhachhang' => $Hotrokhachhang, 'gioithieukhoa' => $gioithieukhoa, 'gioithieuchung' => $gioithieuchung, 'dichvuyte' => $dichvuyte, 'lsPost' => $lsPost, 'search'=>$search,'count'=>$count]);
+    }
+
 //    public function showListDoctor()
 //    {
 //        $lsDoctor = Doctor::all();

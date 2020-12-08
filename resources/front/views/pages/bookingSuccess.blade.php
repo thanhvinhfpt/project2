@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.postMaster')
 @section('content')
     <div class="col-md-8">
         <div class="row">

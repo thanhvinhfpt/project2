@@ -24,7 +24,7 @@
                 <!-- Search -->
                 <div class="sec11_col2 d_flex">
                     <div class="sec11_col2_col1">
-                        <form action="/" method="get" id="searchform">
+                        <form action="/search" method="get" id="searchform">
                             <label>
                                 <span>
                                     <em style="opacity: 0">{{ trans('book-schedule.SEARCH_BOX_LABEL') }}</em>

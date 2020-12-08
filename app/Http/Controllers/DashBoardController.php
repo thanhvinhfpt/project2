@@ -14,7 +14,7 @@ class DashBoardController extends Controller
     public function index()
     {
       
-       $lsSchedule = ExaminationSchedule::where('status','=', 'Pendding') ->orderBy('created_at', 'desc')->get();
+       $lsSchedule = ExaminationSchedule::where('status','=', 'Pendding')->orderBy('created_at', 'desc')->get();
   
        return view('dashboard.dashboard')->with(['lsSchedule'=>$lsSchedule]);
     }

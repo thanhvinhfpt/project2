@@ -25,6 +25,7 @@ use App\Http\Controllers\HistoryController;
 
 // frontend
 Route::get('/',[FrontEndController::class,'home'] )->name('homefrontEnd');
+Route::get('/search',[FrontEndController::class,'search'] )->name('search');
 Route::get('/home/{id}',[FrontEndController::class,'showListPost'])->name('lsPost');
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');

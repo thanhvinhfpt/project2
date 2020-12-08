@@ -13,6 +13,6 @@
             <p style="font-size: 30px;color: #2a7f49;margin-bottom: 5px"><strong>{{$post->title}}</strong></p>
         </div>
 
-        <p style="margin: 5px" class="content">{!! $post->body !!}</p>
+        <p style="margin: 5px" class="content" >{!! $post->body !!}</p>
 </section>
 @endsection

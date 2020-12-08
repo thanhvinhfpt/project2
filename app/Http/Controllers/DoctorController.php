@@ -18,13 +18,13 @@ class DoctorController extends Controller
        $clinic_id = $request->clinicSearch;
        $name = $request->nameSearch;
        if($clinic_id == null && $name == null){
-            $lsDoctor =  Doctor::paginate(10);
+            $lsDoctor =  Doctor::orderBy('created_at', 'desc')->paginate(10);
        }else if($clinic_id != null && $name == null){
-            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->paginate(10);
+            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->orderBy('created_at', 'desc')->paginate(10);
        }else if($clinic_id != null && $name != null){
-        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->paginate(10);
+        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->orderBy('created_at', 'desc')->paginate(10);
        }else{
-            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->paginate(10);
+            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->orderBy('created_at', 'desc')->paginate(10);
        }
        $lsClinic = Clinic::all();
        return view('doctors.doctor')->with(['lsClinic'=>$lsClinic, 'lsDoctor'=> $lsDoctor,'clinic_id'=>$clinic_id, 'name'=>$name]);

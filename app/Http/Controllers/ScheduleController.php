@@ -29,21 +29,21 @@ class ScheduleController extends Controller
         $clinic_id = $request->clinic;
         $identity = $request->identity;
         if($clinic_id == null && $doctor_id == null && $identity == null && $date == null){
-            $lsSchedule = ExaminationSchedule::where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }else if($clinic_id != null && $doctor_id == null && $identity == null && $date == null ){
-            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }else if($clinic_id != null && $doctor_id != null && $identity == null && $date == null ){
-            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('doctor_id',"=", $doctor_id)->where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('doctor_id',"=", $doctor_id)->where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }else if($clinic_id == null && $doctor_id == null && $identity == null && $date != null) {
             $lsSchedule = ExaminationSchedule::where('date',"=", $date)->where('status',"=", "Pendding")->paginate(6);
         }else if($clinic_id != null && $doctor_id != null && $identity == null && $date != null){
-            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('doctor_id',"=", $doctor_id)->where('date',"=", $date)->where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('doctor_id',"=", $doctor_id)->where('date',"=", $date)->where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }else if($clinic_id == null && $doctor_id == null && $identity != null && $date == null){
             $lsSchedule = ExaminationSchedule::where('identity',"=", $identity)->where('status',"=", "Pendding")->paginate(6);
         }else if($clinic_id != null && $doctor_id != null && $identity != null && $date != null){
-            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('identity',"=", $identity)->where('doctor_id',"=", $doctor_id)->where('date',"=", $date)->where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('clinic_id',"=",  $clinic_id)->where('identity',"=", $identity)->where('doctor_id',"=", $doctor_id)->where('date',"=", $date)->where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }else if($clinic_id == null && $doctor_id != null && $identity == null && $date == null){
-            $lsSchedule = ExaminationSchedule::where('doctor_id',"=",  $doctor_id)->where('status',"=", "Pendding")->paginate(6);
+            $lsSchedule = ExaminationSchedule::where('doctor_id',"=",  $doctor_id)->where('status',"=", "Pendding")->orderBy('created_at', 'desc')->paginate(6);
         }
         $lsDoctor = Doctor::all();
         $lsClinic = Clinic::all();
