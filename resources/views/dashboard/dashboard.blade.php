@@ -71,8 +71,8 @@
                     <div class="col-xl-3 col-sm-6">
                       <div class="card card-mini mb-4">
                         <div class="card-body">
-                          <h2 class="mb-1">71,503</h2>
-                          <p>Online Signups</p>
+                          <h2 class="mb-1">{{$total}}</h2>
+                          <p>Total Booking</p>
                           <div class="chartjs-wrapper">
                             <canvas id="barChart"></canvas>
                           </div>
@@ -82,8 +82,8 @@
                     <div class="col-xl-3 col-sm-6">
                       <div class="card card-mini  mb-4">
                         <div class="card-body">
-                          <h2 class="mb-1">9,503</h2>
-                          <p>New Visitors Today</p>
+                          <h2 class="mb-1">{{$total1}}</h2>
+                          <p>Booking Success</p>
                           <div class="chartjs-wrapper">
                             <canvas id="dual-line"></canvas>
                           </div>
@@ -93,8 +93,8 @@
                     <div class="col-xl-3 col-sm-6">
                       <div class="card card-mini mb-4">
                         <div class="card-body">
-                          <h2 class="mb-1">71,503</h2>
-                          <p>Monthly Total Order</p>
+                          <h2 class="mb-1">{{$total2}}</h2>
+                          <p>Booking Cancel</p>
                           <div class="chartjs-wrapper">
                             <canvas id="area-chart"></canvas>
                           </div>
@@ -104,8 +104,8 @@
                     <div class="col-xl-3 col-sm-6">
                       <div class="card card-mini mb-4">
                         <div class="card-body">
-                          <h2 class="mb-1">9,503</h2>
-                          <p>Total Revenue This Year</p>
+                          <h2 class="mb-1">{{$total3}}</h2>
+                          <p>Booking Pending</p>
                           <div class="chartjs-wrapper">
                             <canvas id="line"></canvas>
                           </div>
@@ -120,7 +120,7 @@
                       <!-- Sales Graph -->
                       <div class="card card-default" data-scroll-height="675">
                         <div class="card-header">
-                          <h2>Sales Of The Year</h2>
+                          <h2>Success and Cancel booking</h2>
                         </div>
                         <div class="card-body">
                           <canvas id="linechart" class="chartjs"></canvas>
@@ -128,14 +128,14 @@
                         <div class="card-footer d-flex flex-wrap bg-white p-0">
                           <div class="col-6 px-0">
                             <div class="text-center p-4">
-                              <h4>$6,308</h4>
-                              <p class="mt-2">Total orders of this year</p>
+                              <h4>{{$totalSuccess}}</h4>
+                              <p class="mt-2">Total success booking</p>
                             </div>
                           </div>
                           <div class="col-6 px-0">
                             <div class="text-center p-4 border-left">
-                              <h4>$70,506</h4>
-                              <p class="mt-2">Total revenue of this year</p>
+                              <h4>{{$totalCancel}}</h4>
+                              <p class="mt-2">Total cancel booking</p>
                             </div>
                           </div>
                         </div>
@@ -145,25 +145,33 @@
                   <!-- Doughnut Chart -->
                   <div class="card card-default" data-scroll-height="675">
                     <div class="card-header justify-content-center">
-                      <h2>Orders Overview</h2>
+                      <h2>Booking Overview</h2>
                     </div>
                     <div class="card-body" >
                       <canvas id="doChart" ></canvas>
                     </div>
                     <a href="#" class="pb-5 d-block text-center text-muted"><i class="mdi mdi-download mr-2"></i> Download overall report</a>
                     <div class="card-footer d-flex flex-wrap bg-white p-0">
-                      <div class="col-6">
-                        <div class="py-4 px-4">
+                      <div class="col-4">
+                        <div class="">
                           <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i>Order Completed</li>
+                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i>&nbspBooking Success</li>
 
                           </ul>
                         </div>
                       </div>
-                      <div class="col-6 border-left">
-                        <div class="py-4 px-4 ">
+                      <div class="col-4 border-left">
+                        <div class="">
                           <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #8061ef"></i>Order Pending</li>
+                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i> Booking Cancel</li>
+
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-4 border-left">
+                        <div class=" ">
+                          <ul class="d-flex flex-column justify-content-between">
+                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #8061ef"></i>Booking Pending</li>
 
                           </ul>
                         </div>
@@ -219,7 +227,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content doctor">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalFormTitle">History Examination</h5>
+                      <h5 class="modal-title" id="exampleModalFormTitle">Lịch sử khám bệnh</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -241,7 +249,6 @@
                               </div>
                           </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
@@ -252,19 +259,22 @@
                               </div>
                               <div class="col-md-6">
                               <div class="form-group">
-                                <label for="doctor">Doctor</label>
+                                <label for="doctor">Bác sĩ</label>
                                 <input type="text" class="form-control" id="doctor" name="doctor" readonly>
                               </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="comment">Comment:</label>
+                          <label for="comment">Kết quả khám</label>
                           <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
                           <span class="message" style="color:tomato"></span>
                         </div>
                         
-                        m ''
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary" onclick="return validate()" >Submit</button>
+                        </div>
                       </form>
                     </div>
                     
@@ -276,7 +286,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content doctor">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalFormTitle">Edit Schedule</h5>
+                      <h5 class="modal-title" id="exampleModalFormTitle">Sửa lịch khám</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span id="star" aria-hidden="true">&times;</span>
                       </button>
@@ -315,7 +325,7 @@
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="identity">Date</label>
+                                  <label for="identity">Ngày khám</label>
                                   <input type="date" min="" name="dateEdit" id="dateEdit" class="form-control" placeholder="End Date" />
                               
                                 </div>
@@ -324,9 +334,9 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                            <label for="clinic">Doctor</label>
+                            <label for="clinic">Bác sĩ</label>
                             <select  class="form-control" id="doctorEdit" name="doctorEdit">
-                            <option value="">Choose Doctor</option>
+                            <option value="">Chọn bác sĩ</option>
                                 
                             </select>
                           
@@ -565,6 +575,190 @@
     
     }
 }
+</script>
+<script>
+var ctx = document.getElementById("linechart");
+  if (ctx !== null) {
+    var data1 = <?php echo json_encode($data1)?>;
+    var data2 = <?php echo json_encode($data2)?>;
+    console.log(data2);
+    var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: "line",
+
+      // The data for our dataset
+      data: {
+        labels: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        datasets: [
+          {
+            label: "Success booking",
+            backgroundColor: "transparent",
+            borderColor: "rgb(82, 136, 255)",
+            data: data1,
+            lineTension: 0.3,
+            pointRadius: 5,
+            pointBackgroundColor: "rgba(255,255,255,1)",
+            pointHoverBackgroundColor: "rgba(255,255,255,1)",
+            pointBorderWidth: 2,
+            pointHoverRadius: 8,
+            pointHoverBorderWidth: 1
+          },
+          {
+            label: "Cancel booking",
+            backgroundColor: "transparent",
+            borderColor: "rgb(255, 0, 0, 1)",
+            data: data2,
+            lineTension: 0.3,
+            pointRadius: 5,
+            pointBackgroundColor: "rgba(255,255,255,1)",
+            pointHoverBackgroundColor: "rgba(255,255,255,5)",
+            pointBorderWidth: 2,
+            pointHoverRadius: 8,
+            pointHoverBorderWidth: 1
+          }
+        ]
+      },
+
+      // Configuration options go here
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        layout: {
+          padding: {
+            right: 10
+          }
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: true,
+                color: "#eee",
+                zeroLineColor: "#eee",
+              },
+              ticks: {
+                callback: function(value) {
+                  var ranges = [
+                    { divider: 1e6, suffix: "M" },
+                    { divider: 1e4, suffix: "k" }
+                  ];
+                  function formatNumber(n) {
+                    for (var i = 0; i < ranges.length; i++) {
+                      if (n >= ranges[i].divider) {
+                        return (
+                          (n / ranges[i].divider).toString() + ranges[i].suffix
+                        );
+                      }
+                    }
+                    return n;
+                  }
+                  return formatNumber(value);
+                }
+              }
+            }
+          ]
+        },
+        tooltips: {
+          callbacks: {
+            title: function(tooltipItem, data) {
+              return data["labels"][tooltipItem[0]["index"]];
+            },
+            label: function(tooltipItem, data) {
+              return data["datasets"][0]["data"][tooltipItem["index"]] + " book";
+            }
+          },
+          responsive: true,
+          intersect: false,
+          enabled: true,
+          titleFontColor: "#888",
+          bodyFontColor: "#555",
+          titleFontSize: 12,
+          bodyFontSize: 18,
+          backgroundColor: "rgba(256,256,256,0.95)",
+          xPadding: 20,
+          yPadding: 10,
+          displayColors: false,
+          borderColor: "rgba(220, 220, 220, 0.9)",
+          borderWidth: 2,
+          caretSize: 10,
+          caretPadding: 15
+        }
+      }
+    });
+  }
+</script>
+<script>
+var doughnut = document.getElementById("doChart");
+  if (doughnut !== null) {
+    var total1 = <?php echo json_encode($total1)?>;
+    var total2 = <?php echo json_encode($total2)?>;
+    var total3 = <?php echo json_encode($total3)?>;
+    var myDoughnutChart = new Chart(doughnut, {
+      type: "doughnut",
+      data: {
+        labels: ["Success", "Cancel", "Pendding"],
+        datasets: [
+          {
+            label: ["Success", "Cancel", "Pendding"],
+            data: [total1, total2, total3],
+            backgroundColor: ["#4c84ff", "#29cc97", "#8061ef"],
+            borderWidth: 1
+            // borderColor: ['#4c84ff','#29cc97','#8061ef','#fec402']
+            // hoverBorderColor: ['#4c84ff', '#29cc97', '#8061ef', '#fec402']
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        cutoutPercentage: 75,
+        tooltips: {
+          callbacks: {
+            title: function(tooltipItem, data) {
+              return "Booking : " + data["labels"][tooltipItem[0]["index"]];
+            },
+            label: function(tooltipItem, data) {
+              return data["datasets"][0]["data"][tooltipItem["index"]];
+            }
+          },
+          titleFontColor: "#888",
+          bodyFontColor: "#555",
+          titleFontSize: 12,
+          bodyFontSize: 14,
+          backgroundColor: "rgba(256,256,256,0.95)",
+          displayColors: true,
+          borderColor: "rgba(220, 220, 220, 0.9)",
+          borderWidth: 2
+        }
+      }
+    });
+  }
 </script>
 @endsection
 

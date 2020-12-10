@@ -1,4 +1,4 @@
-/* ====== Index ======
+ /* ====== Index ======
 
 1. DUAL LINE CHART
 2. DUAL LINE CHART2
@@ -197,135 +197,7 @@ $(document).ready(function() {
     });
   }
   /*======== 3. LINE CHART ========*/
-  var ctx = document.getElementById("linechart");
-  if (ctx !== null) {
-    var chart = new Chart(ctx, {
-      // The type of chart we want to create
-      type: "line",
-
-      // The data for our dataset
-      data: {
-        labels: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec"
-        ],
-        datasets: [
-          {
-            label: "",
-            backgroundColor: "transparent",
-            borderColor: "rgb(82, 136, 255)",
-            data: [
-              100,
-              11000,
-              10000,
-              14000,
-              11000,
-              17000,
-              14500,
-              18000,
-              5000,
-              23000,
-              14000,
-              19000
-            ],
-            lineTension: 0.3,
-            pointRadius: 5,
-            pointBackgroundColor: "rgba(255,255,255,1)",
-            pointHoverBackgroundColor: "rgba(255,255,255,1)",
-            pointBorderWidth: 2,
-            pointHoverRadius: 8,
-            pointHoverBorderWidth: 1
-          }
-        ]
-      },
-
-      // Configuration options go here
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-          display: false
-        },
-        layout: {
-          padding: {
-            right: 10
-          }
-        },
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: false
-              }
-            }
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: "#eee",
-                zeroLineColor: "#eee",
-              },
-              ticks: {
-                callback: function(value) {
-                  var ranges = [
-                    { divider: 1e6, suffix: "M" },
-                    { divider: 1e4, suffix: "k" }
-                  ];
-                  function formatNumber(n) {
-                    for (var i = 0; i < ranges.length; i++) {
-                      if (n >= ranges[i].divider) {
-                        return (
-                          (n / ranges[i].divider).toString() + ranges[i].suffix
-                        );
-                      }
-                    }
-                    return n;
-                  }
-                  return formatNumber(value);
-                }
-              }
-            }
-          ]
-        },
-        tooltips: {
-          callbacks: {
-            title: function(tooltipItem, data) {
-              return data["labels"][tooltipItem[0]["index"]];
-            },
-            label: function(tooltipItem, data) {
-              return "$" + data["datasets"][0]["data"][tooltipItem["index"]];
-            }
-          },
-          responsive: true,
-          intersect: false,
-          enabled: true,
-          titleFontColor: "#888",
-          bodyFontColor: "#555",
-          titleFontSize: 12,
-          bodyFontSize: 18,
-          backgroundColor: "rgba(256,256,256,0.95)",
-          xPadding: 20,
-          yPadding: 10,
-          displayColors: false,
-          borderColor: "rgba(220, 220, 220, 0.9)",
-          borderWidth: 2,
-          caretSize: 10,
-          caretPadding: 15
-        }
-      }
-    });
-  }
+  
   /*======== 4. LINE CHART1 ========*/
   var lchart1 = document.getElementById("linechart1");
   if (lchart1 !== null) {
@@ -841,51 +713,7 @@ $(document).ready(function() {
     });
   }
   /*======== 11. DOUGHNUT CHART ========*/
-  var doughnut = document.getElementById("doChart");
-  if (doughnut !== null) {
-    var myDoughnutChart = new Chart(doughnut, {
-      type: "doughnut",
-      data: {
-        labels: ["completed", "unpaid", "pending", "canceled"],
-        datasets: [
-          {
-            label: ["completed", "unpaid", "pending", "canceled"],
-            data: [4100, 2500, 1800, 2300],
-            backgroundColor: ["#4c84ff", "#29cc97", "#8061ef", "#fec402"],
-            borderWidth: 1
-            // borderColor: ['#4c84ff','#29cc97','#8061ef','#fec402']
-            // hoverBorderColor: ['#4c84ff', '#29cc97', '#8061ef', '#fec402']
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-          display: false
-        },
-        cutoutPercentage: 75,
-        tooltips: {
-          callbacks: {
-            title: function(tooltipItem, data) {
-              return "Order : " + data["labels"][tooltipItem[0]["index"]];
-            },
-            label: function(tooltipItem, data) {
-              return data["datasets"][0]["data"][tooltipItem["index"]];
-            }
-          },
-          titleFontColor: "#888",
-          bodyFontColor: "#555",
-          titleFontSize: 12,
-          bodyFontSize: 14,
-          backgroundColor: "rgba(256,256,256,0.95)",
-          displayColors: true,
-          borderColor: "rgba(220, 220, 220, 0.9)",
-          borderWidth: 2
-        }
-      }
-    });
-  }
+  
   /*======== 12. POLAR CHART ========*/
     var polar = document.getElementById("polar");
     if (polar !== null) {
