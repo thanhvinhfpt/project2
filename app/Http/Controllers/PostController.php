@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-            $lsPost = Post::all();
+            $lsPost = Post::paginate(6);
             $lsTag = Tag::all();
             return view('Posts.post')->with(['lsPost'=>$lsPost,'lsTag'=>$lsTag]);
     }

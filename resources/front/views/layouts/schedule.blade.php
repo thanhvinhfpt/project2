@@ -42,13 +42,13 @@
 
 </head>
 <body>
-@include('partial.postHeader')
+@include('partial.Header')
 <section class="container12 sec17">
     <div class="wrap">
         <div class="d-flex">
             @yield('content')
 
-            @include('partial.SideBar')
+{{--            @include('partial.SideBar')--}}
         </div>
     </div>
 </section>

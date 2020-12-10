@@ -23,14 +23,14 @@ use App\Http\Controllers\FrontEndController;
 */
 
 // frontend
-Route::get('/',[FrontEndController::class,'home'] );
+Route::get('/',[FrontEndController::class,'home'] )->name('homefrontEnd');
 Route::get('/home/{tagName}',[FrontEndController::class,'showListPost'])->name('lsPost');
 Route::get('/list-doctors',[FrontEndController::class,'showListDoctor']);
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
-Route::get('/front/frontEndSchedule', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
-Route::post('/front/frontEndScheduleStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
+Route::get('/BookingExamination', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
+Route::post('/ExaminationStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
 
 
 

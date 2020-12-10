@@ -32,11 +32,11 @@ class FrontEndSchedule extends Controller
     {
         $lsClinic = Clinic::all();
         $lsDoctor = Doctor::all();
-        $gioithieukhoa = Post::all()->where('tagId','=','4');
+        $gioithieukhoa = Post::all()->where('tag_id','=','4');
 
-        $gioithieuchung = Post::all()->where('tagId','=','10');
-        $dichvuyte = Post::all()->where('tagId','=','15');
-        $Hotrokhachhang = Post::all()->where('tagId','=','16');
+        $gioithieuchung = Post::all()->where('tag_id','=','10');
+        $dichvuyte = Post::all()->where('tag_id','=','15');
+        $Hotrokhachhang = Post::all()->where('tag_id','=','16');
         return view('pages.schedule')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
     }
 

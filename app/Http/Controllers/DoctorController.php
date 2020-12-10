@@ -17,13 +17,13 @@ class DoctorController extends Controller
        $clinic_id = $request->clinicSearch;
        $name = $request->nameSearch;
        if($clinic_id == null && $name == null){
-            $lsDoctor =  Doctor::paginate(4);
+            $lsDoctor =  Doctor::paginate(10);
        }else if($clinic_id != null && $name == null){
-            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->paginate(4);
+            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->paginate(10);
        }else if($clinic_id != null && $name != null){
-        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->paginate(4);
+        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->paginate(10);
        }else{
-            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->paginate(4);
+            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->paginate(10);
        }
        $lsClinic = Clinic::all();
        return view('doctors.doctor')->with(['lsClinic'=>$lsClinic, 'lsDoctor'=> $lsDoctor,'clinic_id'=>$clinic_id, 'name'=>$name]);
@@ -63,7 +63,7 @@ class DoctorController extends Controller
         $doctor->save();
         $clinic = Clinic::find($request->clinicInsert);
         $total = Clinic::where('id', '=', $request->clinicInsert)->value('totalDoctor');
-        
+
         $clinic->totalDoctor = $total + 1 ;
         $clinic->save();
         return redirect("doctors");
@@ -114,7 +114,7 @@ class DoctorController extends Controller
             $path = "upload/".$name;
             $doctor->image = $path;
         }
-        
+
         $doctor->save();
         $clinic = Clinic::find($request->clinicEdit);
         $old_clinic_id = $request->old_clinic_id;
@@ -128,7 +128,7 @@ class DoctorController extends Controller
             $old_clinic->totalDoctor =  $old_total - 1;
             $new_clinic->save();
             $old_clinic->save();
-           
+
         }
         return redirect("doctors");
     }
