@@ -156,7 +156,7 @@
                             </ul>
                         </li>
                         <li class="menu-item">
-                            <a href="#">{{ trans('book-schedule.MENU.CONTACT') }}</a>
+                            <a href="{{route('contact')}}">{{ trans('book-schedule.MENU.CONTACT') }}</a>
                         </li>
                     </ul>
                 </div>

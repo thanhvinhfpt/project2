@@ -29,6 +29,7 @@ Route::get('/search',[FrontEndController::class,'search'] )->name('search');
 Route::get('/home/{id}',[FrontEndController::class,'showListPost'])->name('lsPost');
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
+Route::get('/contact',[FrontEndController::class,'contact'] )->name('contact');
 
 Route::get('/BookingExamination', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
 Route::post('/ExaminationStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');

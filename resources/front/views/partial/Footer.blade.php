@@ -99,8 +99,8 @@
                         <p>
                             <!-- <b>Địa chỉ 1:</b> <br> -->
                             <span class="ttu">{{SiteHelper::$branch}}</span> <br>
-                            286 Thụy Khuê, Tây Hồ, Hà Nội{{ trans('book-schedule.MENU.'.'') }} <br>
-                           {{ trans('book-schedule.MENU.'.'Cấp cứu (24/24)') }}: <a>0243 728 0888</a> <br>
+                            Số 8 Tôn Thất Thuyết, Mỹ Đình, Nam Từ Liêm, Hà Nội <br>
+                           {{ trans('book-schedule.MENU.'.'Cấp cứu (24/24)') }}: <a>0243 888 8888</a> <br>
                         </p>
                         <p class="foot1_col4_col_map"><a target="_blank" rel="nofollow, noopener" href="https://goo.gl/maps/FYN9RE5nW6Q2" title="Google map"><i class="fa fa-map-marker"></i>&nbsp&nbsp{{ trans('book-schedule.MENU.'.'Xem bản đồ tại đây') }}</a></p>
                         <span><br></span>
@@ -131,7 +131,7 @@
                             {{ trans('book-schedule.MENU.'.'Phòng khám Mắt, Da liễu: 8:00 – 17:00') }} <br>
                             {{ trans('book-schedule.MENU.'.'Khám Sản phụ khoa: 8:00 – 17:00') }}<br>
                             <span><b>{{ trans('book-schedule.MENU.'.'Liên hệ') }}:</b></span> <br>
-                            <a>1900 55 88 92</a>&nbsp;{{ trans('book-schedule.MENU.'.'hoặc') }}&nbsp;<a>0902 223 864</a>&nbsp;{{ trans('book-schedule.MENU.'.'trong các trường hợp sau') }}: <br>
+                            <a>1900 88 88 88</a>&nbsp;{{ trans('book-schedule.MENU.'.'hoặc') }}&nbsp;<a>0988 888 888</a>&nbsp;{{ trans('book-schedule.MENU.'.'trong các trường hợp sau') }}: <br>
                             - {{ trans('book-schedule.MENU.'.'Đặt khám') }} <br>
                             -  {{ trans('book-schedule.MENU.'.'Hỗ trợ book phòng cho người bệnh ở tỉnh xa') }}<br>
                         </p>
