@@ -21,7 +21,7 @@ class ScheduleController extends Controller
         $olddate = date ( 'Y-m-j' , $olddate );
         $lsOldSchedule = ExaminationSchedule::where('date',"=", $olddate)->get();
         foreach($lsOldSchedule as $oldSchedule){
-            // $oldSchedule->status = "Cancel";
+            $oldSchedule->status = "Cancel";
             $oldSchedule->save();
         }
         $date = $request->date;

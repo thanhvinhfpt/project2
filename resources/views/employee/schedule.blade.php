@@ -69,13 +69,13 @@
                           
                           <div class="col-md-3">
                             <div class="form-group ">
-                              <label for="date">Day/Month/Year</label>
+                              <label for="date">Ngày/Tháng/Năm</label>
                               <input type="date" class="form-control"  id="date" name="date" value="{{$date}}">
                             </div>
                           </div>
                           <div class="col-md-3">
                             <div class="form-group ">
-                              <label for="identity">Identity</label>
+                              <label for="identity">Chứng minh nhân dân</label>
                               <input type="number" class="form-control" placeholder="Enter Identity" id="identity" name="identity" value="{{$identity}}">
                             </div>
                           </div>
@@ -131,7 +131,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content doctor">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalFormTitle">History Examination</h5>
+                      <h5 class="modal-title" id="exampleModalFormTitle">Lịch sử khám bệnh/h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -164,14 +164,14 @@
                               </div>
                               <div class="col-md-6">
                               <div class="form-group">
-                                <label for="doctor">Doctor</label>
+                                <label for="doctor">Bác sĩ</label>
                                 <input type="text" class="form-control" id="doctor" name="doctor" readonly>
                               </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="comment">Comment:</label>
+                          <label for="comment">Kết quả khám </label>
                           <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
                           <span class="message" style="color:tomato"></span>
                         </div>
@@ -179,7 +179,7 @@
                         <div class="modal-footer">
                           <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-primary" onclick="return validate()" >Submit</button>
-                      </div>
+                        </div>
                       </form>
                     </div>
                     

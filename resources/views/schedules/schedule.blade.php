@@ -67,9 +67,9 @@
                         <div class="row">
                           <div class="col-md-2">
                             <div class="form-group">
-                              <label for="clinic">Clinic</label>
+                              <label for="clinic">Khoa khám</label>
                               <select  class="form-control" id="clinic" name="clinic" >
-                                <option value="">Choose Clinic</option>
+                                <option value="">Chọn khoa</option>
                                   @foreach($lsClinic as $clinic)
                                     <option value="{{$clinic->id}}" {{$clinic->id == $clinic_id ? 'selected' : ''}} >{{$clinic->name}}</option>
                                   @endforeach
@@ -78,9 +78,9 @@
                           </div>
                           <div class="col-md-3">
                             <div class="form-group ">
-                              <label for="doctor">Doctor</label>
+                              <label for="doctor">Bác sĩ</label>
                               <select  class="form-control" id="doctor" name="doctor" >
-                                <option value="">Choose Doctor</option>
+                                <option value="">Chọn bác sĩ</option>
                                   @foreach($lsDoctor as $doctor)
                                     <option value="{{$doctor->id}}" {{$doctor->id == $doctor_id ? 'selected' : ''}}  >{{$doctor->name}}</option>
                                   @endforeach
@@ -89,13 +89,13 @@
                           </div>
                           <div class="col-md-3">
                             <div class="form-group ">
-                              <label for="date">Day/Month/Year</label>
+                              <label for="date">Ngày/Tháng/Năm</label>
                               <input type="date" class="form-control"  id="date" name="date" value="{{$date}}">
                             </div>
                           </div>
                           <div class="col-md-2">
                             <div class="form-group ">
-                              <label for="identity">Identity</label>
+                              <label for="identity">CMND</label>
                               <input type="number" class="form-control" placeholder="Enter Identity" id="identity" name="identity">
                             </div>
                           </div>
@@ -155,7 +155,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content doctor">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalFormTitle">History Examination</h5>
+                      <h5 class="modal-title" id="exampleModalFormTitle">Lịch sử khám bệnh</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -188,14 +188,14 @@
                               </div>
                               <div class="col-md-6">
                               <div class="form-group">
-                                <label for="doctor">Doctor</label>
+                                <label for="doctor">Bác sĩ</label>
                                 <input type="text" class="form-control" id="doctor" name="doctor" readonly>
                               </div>
                           </div>
                         </div>
 
                         <div class="form-group">
-                          <label for="comment">Comment:</label>
+                          <label for="comment">Kết quả khám bệnh</label>
                           <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
                           <span class="message" style="color:tomato"></span>
                         </div>
@@ -215,7 +215,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content doctor">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalFormTitle">Edit Schedule</h5>
+                      <h5 class="modal-title" id="exampleModalFormTitle">Đổi lịch khám</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span id="star" aria-hidden="true">&times;</span>
                       </button>
@@ -229,7 +229,7 @@
                               <div class="form-group">
                                 <label for="time">Giờ Khám</label>
                                 <select  class="form-control" id="timeEdit" name="timeEdit">
-                                <option value="">Choose Time</option>
+                                <option value="">Chọn giờ khám</option>
                                 <option value="07:00 - 07:30 AM">07:00 - 07:30 AM</option>
                                 <option value="07:30 - 08:00 AM">07:30 - 08:00 AM</option>
                                 <option value="08:00 - 08:30 AM">08:00 - 08:30 AM</option>
@@ -254,7 +254,7 @@
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="identity">Date</label>
+                                  <label for="identity">Ngày khám</label>
                                   <input type="date" min="" name="dateEdit" id="dateEdit" class="form-control" placeholder="End Date" />
                               
                                 </div>
@@ -263,9 +263,9 @@
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                            <label for="clinic">Doctor</label>
+                            <label for="clinic">Bác sĩ</label>
                             <select  class="form-control" id="doctorEdit" name="doctorEdit">
-                            <option value="">Choose Doctor</option>
+                            <option value="">Chọn bác sĩ</option>
                                 
                             </select>
                           
