@@ -18,9 +18,9 @@
 
             <p>Nằm ở vị trí trung tâm gần bến xe Mỹ Đình, Bệnh viện FPTMedicare được thiết kế hiện đại, tiện nghi. Để tới bệnh viện, quý người bệnh có thể đi theo nhiều hướng theo bản đồ bên dưới:</p>
             <p>– Bằng xe buýt, quý khách có thể đi các tuyến: 05, 51, 39, 09</p>
-{{--            AIzaSyBhkdi-JMKfH3_KXrbT126vAuFWkDAkQGg--}}
+
             <p class="iframe_parent">
-                <iframe style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=KEY
+                <iframe style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBhkdi-JMKfH3_KXrbT126vAuFWkDAkQGg
     &q=FPT+Aptech+Hà+Nội/@21.028842,105.7798257,17z/data=!4m8!1m2!2m1!1sfpt+aptech!3m4!1s0x313455f9bdf0e1c7:0x26caee8e7662dd9b!8m2!3d21.0288119!4d105.7822824" width="100%" height="450" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
             <p><span style="color: #339966;"><strong>BỆNH VIỆN FPTMedicare</strong></span><br>
                 <strong>Địa chỉ:</strong> Số 8 Tôn Thất Thuyết, Mỹ Đình, Nam Từ Liêm, Hà Nội<br>

@@ -10,12 +10,12 @@ class Tag extends Model
 {
     use HasFactory;
     use Sluggable;
-//    public function sluggable(){
-//        return ['slug' => [
-//            'source' => 'title'
-//        ]];
-//        // TODO: Implement sluggable() method.
-//    }
+    public function sluggable(){
+        return ['slug' => [
+            'source' => 'title'
+        ]];
+        // TODO: Implement sluggable() method.
+    }
 
     public function post(){
         return $this->hasMany('App\Models\Post');
