@@ -599,3 +599,10 @@ a {
         display: block!important;
     }
 }
+.pagination{
+    display:flex;
+}
+.error{
+    font-size:14px;
+    color:yellow;
+}

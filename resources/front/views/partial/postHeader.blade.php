@@ -12,7 +12,7 @@
                         <a href="tel:{{SiteHelper::$phone_contact}}">{{SiteHelper::$phone_contact}} </a>
                     </span>
                     <span class="sp1">
-                         <strong>Ngôn ngữ :</strong>
+                         <strong>{{ trans('book-schedule.MENU.'.'Ngôn ngữ') }}:</strong>
                         <a href="/lang/vi"><img src="{{asset('upload/vi.jpg')}}"></a>
                         <a href="/lang/en"><img src="{{asset('upload/en.jpg')}}"></a>
                     </span>
@@ -23,7 +23,7 @@
                 <!-- Search -->
                 <div class="sec11_col2 d_flex">
                     <div class="sec11_col2_col1">
-                        <form action="/" method="get" id="searchform">
+                        <form action="/search" method="get" id="searchform">
                             <label>
                                 <span>
                                     <em style="opacity: 0">{{ trans('book-schedule.SEARCH_BOX_LABEL') }}</em>
@@ -63,11 +63,10 @@
             <div class="d_flex">
                 <div class="sec12_col1">
                     <a
-                        href="{{route('homefrontEnd')}}
-                            "
+                        href="{{route('homefrontEnd')}}"
                         title="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                         <img
-                            src="{{asset('assets/img/header/header_hospital_01.jpg')}}"
+                            src="{{asset('upload/sec12_1 (1).png')}}"
                             alt="{{ trans('book-schedule.TOOL_TIP_IMAGE_01') }}">
                     </a>
                 </div>
@@ -87,7 +86,7 @@
                         <li class="menu-item menu-item-has-children">
                             <a>{{ trans('book-schedule.MENU.Giới thiệu') }}</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="{{route('lsPost','Đội Ngũ Bác Sĩ')}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
+                                <li class="menu-item"><a href="{{route('lsPost',21)}}">{{ trans('book-schedule.MENU.'.'Đội ngũ Bác sĩ') }}</a></li>
                                 @foreach($gioithieuchung as $post)
                                     <li class="menu-item"><a href="/frontEnd/{{$post->id}}">{{ trans('book-schedule.MENU.'.$post->title) }}</a></li>
                                 @endforeach

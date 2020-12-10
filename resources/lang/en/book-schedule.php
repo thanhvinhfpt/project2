@@ -9,6 +9,7 @@ return [
     'TOOL_TIP_IMAGE_01' => 'Bệnh viện sang xịn mịn',
     'TOOL_TIP_IMAGE_02' => 'Bệnh viện sang xịn mịn',
     'MENU' => [
+        'THANK YOU'=>"THANK YOU",
         'Bảo hiểm'=>'Insurrance',
         'ĐẶT HẸN KHÁM BỆNH'=>'BOOKING A EXAMINATION',
         'CÁC GÓI KHÁM SỨC KHỎE'=>'HEALTH EXAMINATION PACKAGES',

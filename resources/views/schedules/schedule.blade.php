@@ -138,7 +138,7 @@
                           <td>{{$schedule->time}}</td>
                           <td>{{$schedule->date}}</td>
                           <td>{{$schedule->status}}</td>
-                          <td><button type="button" data-id="{{$schedule->id}}" data-doctor="{{$schedule->doctor->name}}" data-phone="{{$schedule->phone}}" data-name="{{$schedule->name}}" data-identity="{{$schedule->identity}}" data-toggle="modal" data-target="#historyModalForm" >Close</button></td>
+                          <td><button type="button" data-id="{{$schedule->id}}" data-doctor="{{$schedule->doctor->name}}" data-phone="{{$schedule->phone}}" data-name="{{$schedule->name}}" data-identity="{{$schedule->identity}}" data-toggle="modal" data-target="#historyModalForm" ><span class="mdi mdi-book-open-variant btn-primary btn-style"></span></button></td>
                           <td><button type="button" data-clinic_id="{{$schedule->clinic_id}}" data-id="{{$schedule->id}}" data-doctor_id="{{$schedule->doctor_id}}" data-time="{{$schedule->time}}" data-date="{{$schedule->date}}" data-toggle="modal" data-target="#editModalForm" ><span class="mdi mdi-pencil btn-primary btn-style"></span></button></td>
                           <td><button type="button" data-id="{{$schedule->id}}" data-toggle="modal" data-target="#exampleModal" ><span class="mdi mdi-delete btn-danger btn-style"></span></button></td>
                         </tr>
@@ -196,14 +196,14 @@
 
                         <div class="form-group">
                           <label for="comment">Comment:</label>
-                          <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                          <textarea class="form-control" rows="10" id="comment" name="comment"></textarea>
                           <span class="message" style="color:tomato"></span>
                         </div>
-                        
                         <div class="modal-footer">
                           <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary" onclick="return validate()" >Submit</button>
-                      </div>
+                          <button type="submit" class="btn btn-primary btn-pill" onclick="return validate()">Save </button>
+                        </div>
+                        
                       </form>
                     </div>
                     

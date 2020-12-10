@@ -8,40 +8,9 @@
                 <button id="sidebar-toggler" class="sidebar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                 </button>
-                <!-- Search -->
-                <div class="search" style="width:700px; margin-top: 20px;">
-                    <form action="">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {{--                                    <select  class="form-control" id="clinicSearch" name="clinicSearch" >--}}
-                                        {{--                                        <option value="">Choose Clinic</option>--}}
-                                        {{--                                        @foreach($lsClinic as $clinic)--}}
-                                        {{--                                            <option value="{{$clinic->id}}" {{$clinic->id == $clinic_id ? 'selected' : ''}} >{{$clinic->name}}</option>--}}
-                                        {{--                                        @endforeach--}}
-                                        {{--                                    </select>--}}
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group ">
-                                        <input type="text" class="form-control" placeholder="Enter Post's Name"
-                                               name="nameSearch" id="nameSearch" value="">
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group ">
-                                        <input type="submit" class="btn btn-primary" value="Tìm kiếm"/>
-                                    </div>
-                                </div>
 
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
                 <!-- End search -->
-                <div class="navbar-right" style="padding: 0; margin-left: 115px;">
+                <div class="navbar-right" style="padding: 0; margin-left: 1000px">
                     <ul class="nav navbar-nav">
 
                         <li class="dropdown user-menu">
@@ -97,76 +66,88 @@
 
 
         <!-- Data Table -->
-        <div class="container">
-            <form action="{{route('post.update',$post->id)}}" style="margin-top: 50px" method="post"
-                  enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                <label for="title"><b>Enter Title</b></label>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Title" id="title" name="title"
-                           value="{{$post->title}}">
-                </div>
-
-
-                <label for="author"><b>Enter Author</b></label>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Author" id="author" name="author"
-                           value="{{$post->author}}">
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="tag">Select Tag : </label>
-                        <select name="tag" id="tag">
-                            @foreach($lsTag as $tag)
-                                @if($tag->id == $post->tagId)
-                                    <option value="{{$tag->id}}" selected>{{$tag->name}}</option>
-
-                                @else
-                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6" style="margin-right: 0">
-                        <label for="createdAt">Ngày cập nhật :</label>
-                        <input type="date" name="updatedAt" id="updatedAt" value="{{$post->updated_at}}">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="coverImage">Cover Image</label>
-                            <input type="file" class="form-control" id="coverImage" name="coverImage"
-                                   onchange="loadFile(event)"
-                                   style="color:black; border: none;padding: 0;background-color: #f5f6fa">
-                            <span id="message_avata"></span>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="container" style="margin-left:200px">
+                    <form action="{{route('post.update',$post->id)}}" style="margin-top: 50px" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="title"><b>Enter Title</b></label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Title" id="title" name="title"
+                                        value="{{$post->title}}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="author"><b>Enter Author</b></label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Author" id="author" name="author"
+                                        value="{{$post->author}}">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="" alt="" style="width:100px;" id="imageInsert">
-                    </div>
-                </div>
-                <label for="ckeditor">Content : </label>
-                <div class="row">
-                    <div class="col-md-12">
-                        <textarea class="ckeditor" rows="100" required name="body">{{$post->body}}</textarea>
-                    </div>
-                </div>
-                <div class="container" style="height: 50px">
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group ">
+                                    <label for="tag">Select Tag : </label>
+                                    <select name="tag" id="tag" class="form-control">
+                                        @foreach($lsTag as $tag)
+                                            @if($tag->id == $post->tagId)
+                                                <option value="{{$tag->id}}" selected>{{$tag->name}}</option>
+
+                                            @else
+                                                <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group " style="margin-right: 0">
+                                    <label for="createdAt">Ngày cập nhật :</label>
+                                    <input class="form-control" type="date" name="updatedAt" id="updatedAt" value="{{$post->updated_at}}">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="coverImage">Cover Image</label>
+                                    <input type="file" class="form-control" id="coverImage" name="coverImage"
+                                        onchange="loadFile(event)"
+                                        style="color:black; border: none;padding: 0;background-color: #f5f6fa">
+                                    <span id="message_avata"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="" alt="" style="width:100px;" id="imageInsert">
+                            </div>
+                        </div>
+                        <label for="ckeditor">Content : </label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea class="ckeditor" rows="100" required name="body">{{$post->body}}</textarea>
+                            </div>
+                        </div>
+                        <div class="container" style="height: 20px">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Update Post">
+                        </div>
+
+                    </form>
 
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Update Post">
-                </div>
-
-            </form>
-            <div class="container" style="height: 50px">
-
             </div>
         </div>
-
 
         {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>--}}
         <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>

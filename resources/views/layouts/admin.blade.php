@@ -25,7 +25,7 @@
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="{{asset('assets/css/sleek.css')}}" />
-
+   
 
 
     <!-- FAVICON -->
@@ -154,12 +154,27 @@
                                 </a>
                                 </a>
                             </li>
+                            <li  class="has-sub" >
+                                <a class="sidenav-item-link" href="{{route('history.index')}}">
+                                    <i class="mdi mdi-book-open-variant"></i>
+                                    <span class="nav-text">History Examination</span>
+                                </a>
+                                </a>
+                            </li>
                         @endif
                         @if(Auth::user()->role_name == 'EMPLOYEE')
                             <li  class="has-sub" >
                                 <a class="sidenav-item-link" href="{{route('employees.index')}}">
                                     <i class="mdi mdi-chart-pie"></i>
                                     <span class="nav-text">Examination Schedule</span>
+                                </a>
+                                </a>
+                            </li>
+                            <li  class="has-sub" >
+                                <a class="sidenav-item-link" href="{{route('history.index')}}">
+                                
+                                    <i class="mdi mdi-book-open-variant"></i>
+                                    <span class="nav-text">History Examination</span>
                                 </a>
                                 </a>
                             </li>

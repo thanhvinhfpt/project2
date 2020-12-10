@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\ExaminationSchedule;
 class DashBoardController extends Controller
 {
     /**
@@ -13,7 +13,10 @@ class DashBoardController extends Controller
      */
     public function index()
     {
-       return view('dashboard.dashboard');
+      
+       $lsSchedule = ExaminationSchedule::where('status','=', 'Pendding')->orderBy('created_at', 'desc')->get();
+  
+       return view('dashboard.dashboard')->with(['lsSchedule'=>$lsSchedule]);
     }
 
     /**

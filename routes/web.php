@@ -11,6 +11,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FrontEndSchedule;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\HistoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +25,8 @@ use App\Http\Controllers\FrontEndController;
 
 // frontend
 Route::get('/',[FrontEndController::class,'home'] )->name('homefrontEnd');
-Route::get('/home/{tagName}',[FrontEndController::class,'showListPost'])->name('lsPost');
-Route::get('/list-doctors',[FrontEndController::class,'showListDoctor']);
+Route::get('/search',[FrontEndController::class,'search'] )->name('search');
+Route::get('/home/{id}',[FrontEndController::class,'showListPost'])->name('lsPost');
 Route::get('/lang/{locale}',[\App\Http\Controllers\LocalizationController::class,'index'] );
 Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('FrontendPost');
 
@@ -48,3 +49,4 @@ Route::resource('/schedules', ScheduleController::class);
 Route::resource('/employees', EmployeeController::class);
 Route::resource('/post', PostController::class);
 Route::resource('/tag', TagController::class);
+Route::resource('/history', HistoryController::class);

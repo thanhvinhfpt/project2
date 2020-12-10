@@ -44,7 +44,7 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->body = $request->body;
             $post->created_at = $request->createdAt;
-            $post->tagId = $request->tag;
+            $post->tag_id = $request->tag;
             $post->author = $request->author;
         $path = " ";
         if($request->coverImage != null){
@@ -95,7 +95,7 @@ class PostController extends Controller
         $post->title = $request->title ;
         $post->updated_at=$request->updatedAt;
         $post->body = $request->body;
-        $post->tagId = $request->tag;
+        $post->tag_id = $request->tag;
         $path = "";
         if($request->coverImage != null) {
             $name = $request->coverImage->getClientOriginalExtension();

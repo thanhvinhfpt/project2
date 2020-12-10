@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Clinic;
 use App\Models\Doctor;
+use App\Models\User;
 class DoctorController extends Controller
 {
     /**
@@ -17,13 +18,13 @@ class DoctorController extends Controller
        $clinic_id = $request->clinicSearch;
        $name = $request->nameSearch;
        if($clinic_id == null && $name == null){
-            $lsDoctor =  Doctor::paginate(10);
+            $lsDoctor =  Doctor::orderBy('created_at', 'desc')->paginate(10);
        }else if($clinic_id != null && $name == null){
-            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->paginate(10);
+            $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->orderBy('created_at', 'desc')->paginate(10);
        }else if($clinic_id != null && $name != null){
-        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->paginate(10);
+        $lsDoctor = Doctor::where('clinic_id', '=', $clinic_id)->where('name', 'like', '%'. $name.'%')->orderBy('created_at', 'desc')->paginate(10);
        }else{
-            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->paginate(10);
+            $lsDoctor = Doctor::where('name', 'like', '%'. $name.'%')->orderBy('created_at', 'desc')->paginate(10);
        }
        $lsClinic = Clinic::all();
        return view('doctors.doctor')->with(['lsClinic'=>$lsClinic, 'lsDoctor'=> $lsDoctor,'clinic_id'=>$clinic_id, 'name'=>$name]);
@@ -143,10 +144,16 @@ class DoctorController extends Controller
     {
         $doctor_id = $request->doctor_id;
         $doctor = Doctor::findOrFail($doctor_id);
-        //$doctor->delete();
         $clinic_id = Doctor::where('id', '=',  $doctor_id)->value("clinic_id");
+        $doctor_code =  $doctor->code;
+        $doctor->delete();
+        $user = User::where('doctor_code','=', $doctor_code)->get();
+        if(count($user) > 0 ){
+            foreach( $user as $u ){
+                $u->delete();
+            }
+        }
         $clinicUpdate = Clinic::find($clinic_id);
-        dd($clinicUpdate);
         $totalDoctor = Clinic::where('id', '=', $clinic_id)->value('totalDoctor');
         $clinicUpdate->totalDoctor =  $totalDoctor - 1;
         $clinicUpdate->save();

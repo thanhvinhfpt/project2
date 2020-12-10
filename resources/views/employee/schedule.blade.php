@@ -61,128 +61,132 @@
                 </div>
             </nav>
         </header>
-        <div class="container">
-            <div class="container" style="height: 50px">
+        <div class="search" style="margin-top: 40px">
+                    <form action="">
+                      <div class="container">
+                        <div class="row">
+                          
+                          
+                          <div class="col-md-3">
+                            <div class="form-group ">
+                              <label for="date">Day/Month/Year</label>
+                              <input type="date" class="form-control"  id="date" name="date" value="{{$date}}">
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group ">
+                              <label for="identity">Identity</label>
+                              <input type="number" class="form-control" placeholder="Enter Identity" id="identity" name="identity" value="{{$identity}}">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group ">
+                              <input type="submit" class="btn btn-primary" value="Tìm kiếm" style="margin-top:30px"/>
+                            </div>
+                          </div>
 
-            </div>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+        <div class="container">
+            
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="header_table" style="width:5%">STT</th>
-                    <th class="header_table" style="width:20%">Name</th>
-                    <th class="header_table" style="width:20%">CMND</th>
-                    <th class="header_table" style="width:20%">Docter</th>
-                    <th class="header_table" style="width:20%">Clinic</th>
-                    <th class="header_table" style="width:7%">From</th>
-                    <th class="header_table" style="width:7%">To</th>
-                    <th class="header_table" style="width:7%">Action</th>
-                    <th class="header_table" style="width:7%">Action</th>
+                    <th  class="header_table" style="width:15%">Name</th>
+                    <th  class="header_table" style="width:15%">CMND</th>
+                    <th  class="header_table" style="width:15%">Docter</th>
+                    <th  class="header_table" style="width:15%">Clinic</th>
+                    <th  class="header_table" style="width:15%">Time</th>
+                    <th  class="header_table" style="width:10%">Date</th>
+                    <th  class="header_table" style="width:10%">Status</th>
+                    <th  class="header_table" style="width:3%">Action</th>
+                   
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($lsSchedule as $schedule)
                 <tr>
-                    <td>1</td>
-                    <td>Hoàng Đạo Thúy</td>
-                    <td>171234321</td>
-                    <td>Hoàng Đạo Thúy</td>
-                    <td>Khoa tâm thần</td>
-                    <td>12.30</td>
-                    <td>13.00</td>
-                    <td>
-                        <button type="button" data-toggle="modal" data-target="#exampleModalForm">Close</button>
-                    </td>
-                    <td>
-                        <button type="button" data-toggle="modal" data-target="#exampleModal">Delete</button>
-                    </td>
-                </tr>
-
+                    <td>{{$schedule->name}}</td>
+                    <td>{{$schedule->identity}}</td>
+                    <td>{{$schedule->doctor->name}}</td>
+                    <td>{{$schedule->clinic->name}}</td>
+                    <td>{{$schedule->time}}</td>
+                    <td>{{$schedule->date}}</td>
+                    <td>{{$schedule->status}}</td>
+                    <td><button type="button" data-id="{{$schedule->id}}" data-doctor="{{$schedule->doctor->name}}" data-phone="{{$schedule->phone}}" data-name="{{$schedule->name}}" data-identity="{{$schedule->identity}}" data-toggle="modal" data-target="#historyModalForm" ><span class="mdi mdi-book-open-variant btn-primary btn-style"></button></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
+            {{$lsSchedule->links("pagination::bootstrap-4")}}
         </div>
     </div>
 
 
     <!-- Modal form -->
-    <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content docter">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalFormTitle">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="historyModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content doctor">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalFormTitle">History Examination</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="{{route('history.store')}}" method="post">
+                      @csrf
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="name">Tên bệnh nhân</label>
-                                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
-                                           value="Hoàng Đạo Thúy">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="identity">Số chứng minh nhân dân</label>
-                                    <input type="number" class="form-control" id="identity" value="171234321">
-                                </div>
-                            </div>
+                              <div class="form-group">
+                                <label for="name">Tên bệnh nhân</label>
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" readonly >
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="identity">Số chứng minh nhân dân</label>
+                                <input type="number" class="form-control" id="identity" name="identity" readonly>
+                              </div>
+                          </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="phone">Điện thoại</label>
-                                    <input type="number" class="form-control" id="phone" aria-describedby="emailHelp"
-                                           value="123456789"/>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="doctor">Doctor</label>
-                                    <input type="text" class="form-control" id="doctor" value="abc">
-                                </div>
-                            </div>
+                              <div class="form-group">
+                                <label for="phone">Điện thoại</label>
+                                <input type="number" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" readonly/>
+                                <input type="number" class="form-control" id="id" name="id" hidden/>
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="doctor">Doctor</label>
+                                <input type="text" class="form-control" id="doctor" name="doctor" readonly>
+                              </div>
+                          </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                          <label for="comment">Comment:</label>
+                          <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                          <span class="message" style="color:tomato"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                    </form>
+                        
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary" onclick="return validate()" >Submit</button>
+                      </div>
+                      </form>
+                    </div>
+                    
+                  </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary btn-pill">Save Changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Form confirm -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Xóa đăng ký</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Bạn có chắc muốn hủy đăng ký khám bệnh này ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Hủy</button>
-                    <button type="button" class="btn btn-primary btn-pill">Xác nhận</button>
-                </div>
-            </div>
-        </div>
-    </div>
+              </div>
+    
 
 
     </div>
@@ -196,6 +200,42 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/charts/Chart.min.js"></script>
     <script src="assets/js/chart.js"></script>
+<script>
+  function validate(){
+    var comment = $('#comment').val();
+    if(comment == ""){
+      $('.message').html("Vui lòng nhập kêt quả khám bệnh");
+      return false;
+    }else{
+      return true;
+    }
+  }
+  var message = document.querySelector('.message');
+  message.oninput = function(){
+    $('.message').html("");
+  };
+  
+</script>
+<!-- Data modal to make history -->
+<script type="text/javascript">
+  $('#historyModalForm').on('show.bs.modal', function (event) {
+      
+      var button = $(event.relatedTarget)
+      var name = button.data('name')
+      var id = button.data('id')
+      var identity = button.data('identity')
+      var phone = button.data('phone')
+      var doctor = button.data('doctor')
+     
+      var modal = $(this)
+
+      modal.find('.modal-body #name').val(name)
+      modal.find('.modal-body #id').val(id)
+      modal.find('.modal-body #phone').val(phone)
+      modal.find('.modal-body #identity').val(identity)
+      modal.find('.modal-body #doctor').val(doctor)
+    });
+</script>
 @endsection
 
 

@@ -3,7 +3,7 @@
     <div class="sec17_col1" id="primary">
         <h2 class="title_shadow_bvtc row2" style="margin-top: 24px;">
             <span>
-                <a href="#">{{ trans('book-schedule.MENU.'.'ĐỘI NGŨ BÁC SĨ') }}</a>
+                <a href="{{route('lsPost',21)}}">{{ trans('book-schedule.MENU.'.'ĐỘI NGŨ BÁC SĨ') }}</a>
             </span>
         </h2>
         <div class="sec17_col1_row2">
@@ -13,15 +13,50 @@
                         <ul aria-live="polite" class="slides owl-carousel owl-theme owl-loaded owl-drag">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage" style="transform: translate3d(-15704px, 0px, 0px);">
-                                    @for ($i = 0; $i < 10; $i++)
+
                                         <div class="owl-item" style="width: 785.219px;">
                                             <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
-                                                <a href="https://benhvienthucuc.vn/bac-si-ckii-nguyen-thi-hang-bac-si-noi-tieu-hoa/" target="_self">
-                                                    <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('imgs/doctor-banner.jpg')}}" style="opacity: 1;">
+                                                <a href="{{route('FrontendPost',41)}}" target="_self">
+                                                    <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/3-compressor.jpg')}}" style="opacity: 1;">
                                                 </a>
                                             </li>
                                         </div>
-                                    @endfor
+                                    <div class="owl-item" style="width: 785.219px;">
+                                        <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
+                                            <a href="{{route('FrontendPost',42)}}" target="_self">
+                                                <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/bs-ta-quang-mau.png')}}" style="opacity: 1;">
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="owl-item" style="width: 785.219px;">
+                                        <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
+                                            <a href="{{route('FrontendPost',43)}}" target="_self">
+                                                <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/photo_2020-08-27_11-00-11.jpg')}}" style="opacity: 1;">
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="owl-item" style="width: 785.219px;">
+                                        <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
+                                            <a href="{{route('FrontendPost',44)}}" target="_self">
+                                                <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/bs-nguyen-van-huyen-2.jpg')}}" style="opacity: 1;">
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="owl-item" style="width: 785.219px;">
+                                        <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
+                                            <a href="{{route('FrontendPost',47)}}" target="_self">
+                                                <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/bs-quynh-1-1.jpg')}}" style="opacity: 1;">
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="owl-item" style="width: 785.219px;">
+                                        <li style="display: initial; width: 100%;" class="slide-72868 ms-image item">
+                                            <a href="{{route('FrontendPost',47)}}" target="_self">
+                                                <img height="200" width="770" alt="" class="slider-33900 slide-72868 owl-lazy" src="{{URL::asset('upload/bs-quynh-1-1.jpg')}}" style="opacity: 1;">
+                                            </a>
+                                        </li>
+                                    </div>
+
                                 </div>
                             </div>
                         </ul>
@@ -52,14 +87,14 @@
                 <li class="d_flex">
                     <div class="thumb">
                         <div class="">
-                            <img src="https://i1-suckhoe.vnecdn.net/2020/12/01/f0-lay-nhiem-cong-dong-1606831-5164-2915-1606831939.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=iqUmyXMnQxWmmmcyfMPDzw" alt="phòng chống Covid-19">
+                            <img src="{{asset('upload/1607317853.jpg')}}" alt="phòng chống Covid-19">
                         </div>
-                        <a href="https://vnexpress.net/benh-nhan-1342-la-f0-cua-ba-ca-nhiem-moi-tai-tp-hcm-4200007.html" title="phòng chống Covid-19">
-                            <img width="400" height="250"
-                                 src="https://i1-suckhoe.vnecdn.net/2020/12/01/f0-lay-nhiem-cong-dong-1606831-5164-2915-1606831939.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=iqUmyXMnQxWmmmcyfMPDzw"
-                                 class="thumb-400x250 wp-post-image"
-                                 alt="Bệnh viện ĐKQT Thu Cúc được công nhận là Bệnh viện an toàn trong phòng chống Covid-19">
-                        </a>
+{{--                        <a href="{{route('FrontendPost',68)}}" title="phòng chống Covid-19">--}}
+{{--                            <img width="400" height="250"--}}
+{{--                                 src="{{asset('upload/1607317853.jpg')}}"--}}
+{{--                                 class="thumb-400x250 wp-post-image"--}}
+{{--                                 alt="Bệnh viện ĐKQT Thu Cúc được công nhận là Bệnh viện an toàn trong phòng chống Covid-19">--}}
+{{--                        </a>--}}
                     </div>
                     <div class="text m-1 w-100">
                         <h3>

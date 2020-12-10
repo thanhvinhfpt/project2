@@ -5,6 +5,12 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1">
     <meta name="description" content="{{trans(('book-schedule.META_CONTENT'))}}">
     <link rel="icon" href="{{asset('upload/tải xuống.png')}}" type="image/x-icon">
+    <style>
+        #detailPost p img{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
 
     <!-- CSRF Token -->
     {{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
@@ -37,7 +43,12 @@
     <script src="{{URL::asset('js/main-home.js')}}"></script>
     <script src="{{URL::asset('js/main.js')}}"></script>
     <script src="{{ URL::asset('js/app.js') }}" defer></script>
-
+    <style>
+        #detailPost p img{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
 
 
 </head>
@@ -60,98 +71,4 @@
 </body>
 </html>
 
-{{--@extends('.Header')--}}
-{{--<body>--}}
-{{--<section class="survey" style="margin-top: 200px">--}}
-{{--    <button type="button"  style="margin-bottom: 20px" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-post_id="">Take survey</button>--}}
 
-
-{{--    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
-{{--        <div class="modal-dialog" role="document">--}}
-{{--            <div class="modal-content">--}}
-{{--                <div class="modal-header">--}}
-{{--                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>--}}
-{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-{{--                        <span aria-hidden="true">&times;</span>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--                <div class="modal-body">--}}
-{{--                    <form>--}}
-{{--                        @csrf--}}
-{{--                        --}}{{--                            <input type="hidden" id="post_id"/>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="name" class="col-form-label">Name:</label>--}}
-{{--                            <input type="text" class="form-control" id="name">--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="email" class="col-form-label">Email:</label>--}}
-{{--                            <input type="text" class="form-control" id="email">--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="telephone" class="col-form-label">Telephone:</label>--}}
-{{--                            <input type="text" class="form-control" id="telephone">--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="feedback" class="col-form-label">Feedback:</label>--}}
-{{--                            <textarea class="form-control" id="feedback"></textarea>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--                <div class="modal-footer">--}}
-{{--                    <button type="button" class="btn btn-primary" id="send_msg">Send survey</button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <script>--}}
-
-{{--        $(document).ready(function () {--}}
-{{--            $('#exampleModal').on('show.bs.modal', function (event) {--}}
-{{--                var button = $(event.relatedTarget) // Button that triggered the modal--}}
-{{--                var recipient = button.data('post_id') // Extract info from data-* attributes--}}
-{{--                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).--}}
-{{--                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.--}}
-{{--                var modal = $(this)--}}
-{{--                modal.find('.modal-title').text('Donate ' + recipient)--}}
-{{--                // modal.find('.modal-body input').val(recipient)--}}
-{{--                // $("#post_id").val(recipient);--}}
-{{--            });--}}
-{{--            $("#send_msg").click(function () {--}}
-
-{{--                var token = $("#token").val();--}}
-{{--                var name  = $("#name").val();--}}
-{{--                var email = $("#email").val();--}}
-{{--                var telephone = $("#telephone").val();--}}
-{{--                var feedback = $("#feedback").val();--}}
-
-{{--                var data = {--}}
-
-{{--                    "_token" :"{{csrf_token()}}",--}}
-{{--                    "name" : name,--}}
-{{--                    "email" : email,--}}
-{{--                    "telephone":telephone,--}}
-{{--                    "feedback" : feedback,--}}
-{{--                }--}}
-{{--                $.ajax({--}}
-{{--                        type: "POST",--}}
-{{--                        url : "../api/send_survey",--}}
-{{--                        data :data,--}}
-{{--                        success : function (response) {--}}
-{{--                            alert(response.msg);--}}
-{{--                        },--}}
-{{--                        error : function (response) {--}}
-{{--                            alert('Loi ....');--}}
-{{--                        }--}}
-{{--                    }--}}
-
-
-{{--                )--}}
-
-{{--            })--}}
-
-
-{{--        })--}}
-{{--    </script>--}}
-{{--</section>--}}
-{{--</body>--}}
-{{--@extends('.Footer')--}}

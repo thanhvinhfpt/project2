@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Models\Doctor;
+use App\Models\ExaminationSchedule;
 class EmployeeController extends Controller
 {
     /**
@@ -11,9 +13,27 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('employee.schedule');
+        $doctor_code = Auth::user()->doctor_code;
+        $doctor_id = Doctor::where('code','=', $doctor_code)->value('id');
+        $now = date('Y-m-j');
+        $date = $request->date;
+        
+       
+        $identity = $request->identity;
+     
+        if( $date == null && $identity == null ){
+            $lsSchedule = ExaminationSchedule::where('doctor_id','=',"28")->where('date',"=", $now)->where('status','=','Pendding')->orderBy('created_at', 'desc')->paginate(8);
+            
+        }else if($date != null && $identity == null ){
+            $lsSchedule = ExaminationSchedule::where('doctor_id','=',$doctor_id)->where('date',"=", $date)->where('status','=','Pendding')->orderBy('created_at', 'desc')->paginate(8);
+        }else if($date == null && $identity != null ){
+            $lsSchedule = ExaminationSchedule::where('doctor_id','=',$doctor_id)->where('identity',"=", $identity)->where('status','=','Pendding')->orderBy('created_at', 'desc')->paginate(8);
+        }else{
+            $lsSchedule = ExaminationSchedule::where('doctor_id','=',$doctor_id)->where('date',"=", $date)->where('identity',"=", $identity)->where('status','=','Pendding')->orderBy('created_at', 'desc')->paginate(8);
+        }
+        return view('employee.schedule')->with(['lsSchedule'=>$lsSchedule, 'date'=>$date, 'identity'=>$identity]);
     }
 
     /**

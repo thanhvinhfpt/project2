@@ -29,7 +29,7 @@
                           </div>
                         </form>
                       </div>
-                      <div class="navbar-right style=" style="padding: 0; margin-left: 115px;">
+                      <div class="navbar-right style=" style="padding: 0; margin-left: 430px;">
                         <ul class="nav navbar-nav">
 
                           <li class="dropdown user-menu">
@@ -79,7 +79,7 @@
                       </div>
                     </nav>
                   </header>
-                  <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 16px 20px 0 ;">Add New Clinic</button></span>
+                  <span ><button type="button" data-toggle="modal" data-target="#insertForm"  class="btn btn-primary" style="float: right;  margin: 30px 81px 20px 0 ;">Add New Clinic</button></span>
                   <div class="container">
 
                     <table id="datatable" class="table table-bordered table-hover">
@@ -262,7 +262,7 @@
             data : data,
             success: function(response){
                 $('#message_edit').html(response.data);
-                
+
             },
         });
         }else{
@@ -272,7 +272,7 @@
             data : data,
             success: function(response){
                 $('#message_edit').html(response.data);
-                
+
             },
         })
       };
@@ -304,10 +304,10 @@
               $('#confirmMessage, #confirmDelete').addClass("delete");
             }else{
               $('#confirmMessage, #confirmDelete').removeClass("delete");
-            }    
+            }
         },
     });
-    
+
 })
 
 
