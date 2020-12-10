@@ -32,7 +32,7 @@ Route::get('/frontEnd/{id}',[FrontEndController::class,'show'] )->name('Frontend
 
 Route::get('/BookingExamination', [App\Http\Controllers\FrontEndSchedule::class, 'index'])->name('bookSchedule');
 Route::post('/ExaminationStore', [App\Http\Controllers\FrontEndSchedule::class, 'store'])->name('bookScheduleStore');
-Route::get('/SuccessBookingExamination', [App\Http\Controllers\FrontEndSchedule::class, 'show']);
+
 
 
 

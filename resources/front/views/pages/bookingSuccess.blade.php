@@ -4,7 +4,7 @@
         <div class="row">
             <h2 class="title_shadow_bvtc col-md-12" style="margin-top:50px" ><span>{{ trans('book-schedule.MENU.'.'THANK YOU') }}</span></h2>
             <h1 class="col-md-12">
-                Chúc mừng bạn đã đăng ký khám bệnh thành công tại Bệnh viện Thu Cúc
+                Chúc mừng bạn đã đăng ký khám bệnh thành công tại Bệnh viện Thu Cúc . Chúng tôi đã gửi email thông tin đến bạn
             </h1>
             <h3 class="col-md-12" style="font-weight: 600!important;font-size:24px">Chi tiết đặt lịch</h3></br>
             <div class="detail col-md-12">
@@ -35,7 +35,7 @@
             </div>
     </div>
     </div>
- 
+
 
 
 

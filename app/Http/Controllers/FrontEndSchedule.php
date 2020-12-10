@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Doctor;
 use App\Models\ExaminationSchedule;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 
 class FrontEndSchedule extends Controller
 {
@@ -37,6 +38,7 @@ class FrontEndSchedule extends Controller
         $gioithieuchung = Post::all()->where('tag_id','=','10');
         $dichvuyte = Post::all()->where('tag_id','=','15');
         $Hotrokhachhang = Post::all()->where('tag_id','=','16');
+
         return view('pages.schedule')->with(['Hotrokhachhang'=>$Hotrokhachhang,'gioithieukhoa'=>$gioithieukhoa,'gioithieuchung'=>$gioithieuchung,'dichvuyte'=>$dichvuyte,'lsClinic'=>$lsClinic, 'lsDoctor'=>$lsDoctor]);
     }
 
@@ -77,6 +79,17 @@ class FrontEndSchedule extends Controller
         $gioithieuchung = Post::all()->where('tag_id','=','10');
         $dichvuyte = Post::all()->where('tag_id','=','15');
         $Hotrokhachhang = Post::all()->where('tag_id','=','16');
+        $data=[
+            'name'=>$request->name, 'email'=>$request->email, 'identity'=>$request->identity, 'phone'=>$request->phone, 'date'=>$request->date, 'time'=>$request->time,'doctor'=>$doctor,'clinic'=>$clinic
+        ];
+        $email = $request->email;
+        Mail::send('pages.email',$data,function ($message) use ($email){
+
+            $message->from('vantrinhnode@gmail.com','Heza-MedicalTemplate');
+            $message->to($email,'Customer');
+            $message->subject('Qui khach da dang ky lich kham thanh cong');
+
+        });
         return view('pages.bookingSuccess')->with(['name'=>$request->name, 'email'=>$request->email, 'identity'=>$request->identity, 'phone'=>$request->phone, 'date'=>$request->date, 'time'=>$request->time,'doctor'=>$doctor,'clinic'=>$clinic,'gioithieukhoa'=>$gioithieukhoa, 'gioithieuchung'=>$gioithieuchung, 'dichvuyte'=>$dichvuyte, 'Hotrokhachhang'=>$Hotrokhachhang]);
     }
 
@@ -88,7 +101,7 @@ class FrontEndSchedule extends Controller
      */
     public function show()
     {
-        
+
     }
 
     /**
